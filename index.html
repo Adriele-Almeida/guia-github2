@@ -40,15 +40,6 @@
             opacity: 0.9;
         }
 
-        .time-badge {
-            display: none;
-            background: rgba(255, 255, 255, 0.2);
-            padding: 10px 20px;
-            border-radius: 25px;
-            margin-top: 15px;
-            backdrop-filter: blur(10px);
-        }
-
         .section {
             background: white;
             border-radius: 15px;
@@ -76,6 +67,7 @@
             display: flex;
             align-items: center;
             gap: 15px;
+            flex: 1;
         }
 
         .icon {
@@ -87,6 +79,7 @@
             align-items: center;
             justify-content: center;
             font-size: 24px;
+            transition: all 0.3s;
         }
 
         .icon.completed {
@@ -139,14 +132,15 @@
         }
 
         .section-content {
-            display: none;
-            padding: 30px;
-            border-top: 2px solid #e5e7eb;
-            animation: fadeIn 0.3s ease-out;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
         }
 
         .section-content.show {
-            display: block;
+            max-height: 3000px;
+            padding: 30px;
+            border-top: 2px solid #e5e7eb;
         }
 
         .alert {
@@ -240,20 +234,22 @@
         }
 
         .code-block {
-            display: none;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
             background: #1f2937;
             color: #10b981;
-            padding: 20px;
+            padding: 0;
             border-radius: 8px;
-            overflow-x: auto;
             font-family: 'Courier New', monospace;
             font-size: 14px;
             line-height: 1.6;
-            white-space: pre;
         }
 
         .code-block.show {
-            display: block;
+            max-height: 2000px;
+            padding: 20px;
+            overflow-x: auto;
         }
 
         .final-banner {
@@ -320,13 +316,11 @@
 <body>
     <div class="container">
         <div class="header">
-            <img src="logo-topo.png" alt="Do Codigo ao GitHub" style="max-width: 100%; height: auto;">
+            <h1>🚀 Do Código ao GitHub</h1>
             <p>Guia prático com o passo a passo para subir seu site ou app no GitHub</p>
-            <div class="time-badge">
-                Tempo estimado: 15-20 minutos
-            </div>
         </div>
 
+        <!-- PASSO 1 -->
         <div class="section">
             <div class="section-header" onclick="toggleSection('passo1')">
                 <div class="section-header-left">
@@ -334,7 +328,7 @@
                     <div class="section-title">Passo 1: Criar o Arquivo HTML</div>
                 </div>
                 <div class="section-actions">
-                    <button class="btn btn-complete" id="btn-passo1" onclick="markComplete('passo1', event)">Marcar como feito</button>
+                    <button class="btn btn-complete" onclick="markComplete('passo1', event)">Marcar como feito</button>
                     <span class="arrow" id="arrow-passo1">▼</span>
                 </div>
             </div>
@@ -362,7 +356,7 @@
                         </div>
                     </div>
                     
-                    <div class="code-block" id="code-block">&lt;!DOCTYPE html&gt;
+                    <div class="code-block" id="code-block"><pre>&lt;!DOCTYPE html&gt;
 &lt;html lang="pt-BR"&gt;
 &lt;head&gt;
     &lt;meta charset="UTF-8"&gt;
@@ -411,7 +405,7 @@
         &lt;/button&gt;
     &lt;/div&gt;
 &lt;/body&gt;
-&lt;/html&gt;</div>
+&lt;/html&gt;</pre></div>
                 </div>
 
                 <div class="alert alert-yellow">
@@ -421,6 +415,7 @@
             </div>
         </div>
 
+        <!-- PASSO 2 -->
         <div class="section">
             <div class="section-header" onclick="toggleSection('passo2')">
                 <div class="section-header-left">
@@ -428,7 +423,7 @@
                     <div class="section-title">Passo 2: Criar Conta no GitHub</div>
                 </div>
                 <div class="section-actions">
-                    <button class="btn btn-complete" id="btn-passo2" onclick="markComplete('passo2', event)">Marcar como feito</button>
+                    <button class="btn btn-complete" onclick="markComplete('passo2', event)">Marcar como feito</button>
                     <span class="arrow" id="arrow-passo2">▼</span>
                 </div>
             </div>
@@ -450,6 +445,7 @@
             </div>
         </div>
 
+        <!-- PASSO 3 -->
         <div class="section">
             <div class="section-header" onclick="toggleSection('passo3')">
                 <div class="section-header-left">
@@ -457,7 +453,7 @@
                     <div class="section-title">Passo 3: Criar Repositorio</div>
                 </div>
                 <div class="section-actions">
-                    <button class="btn btn-complete" id="btn-passo3" onclick="markComplete('passo3', event)">Marcar como feito</button>
+                    <button class="btn btn-complete" onclick="markComplete('passo3', event)">Marcar como feito</button>
                     <span class="arrow" id="arrow-passo3">▼</span>
                 </div>
             </div>
@@ -485,6 +481,7 @@
             </div>
         </div>
 
+        <!-- PASSO 4 -->
         <div class="section">
             <div class="section-header" onclick="toggleSection('passo4')">
                 <div class="section-header-left">
@@ -492,7 +489,7 @@
                     <div class="section-title">Passo 4: Fazer Upload do Arquivo</div>
                 </div>
                 <div class="section-actions">
-                    <button class="btn btn-complete" id="btn-passo4" onclick="markComplete('passo4', event)">Marcar como feito</button>
+                    <button class="btn btn-complete" onclick="markComplete('passo4', event)">Marcar como feito</button>
                     <span class="arrow" id="arrow-passo4">▼</span>
                 </div>
             </div>
@@ -514,19 +511,20 @@
                 </div>
             </div>
         </div>
-        
+
+        <!-- PASSO 5 -->
         <div class="section">
-            <div class="section-header" onclick="toggleSection('passo5-config')">
+            <div class="section-header" onclick="toggleSection('passo5')">
                 <div class="section-header-left">
-                    <div class="icon" id="icon-passo5-config">⚙️</div>
+                    <div class="icon" id="icon-passo5">⚙️</div>
                     <div class="section-title">Passo 5: Ativar o GitHub Pages</div>
                 </div>
                 <div class="section-actions">
-                    <button class="btn btn-complete" id="btn-passo5-config" onclick="markComplete('passo5-config', event)">Marcar como feito</button>
-                    <span class="arrow" id="arrow-passo5-config">▼</span>
+                    <button class="btn btn-complete" onclick="markComplete('passo5', event)">Marcar como feito</button>
+                    <span class="arrow" id="arrow-passo5">▼</span>
                 </div>
             </div>
-            <div class="section-content" id="content-passo5-config">
+            <div class="section-content" id="content-passo5">
                 <div class="alert alert-red">
                     <strong style="display: block; margin-bottom: 10px;">Aviso Importante:</strong>
                     <p style="margin-top: 10px;">Como este é um "Site de Projeto", você precisa ativar a publicação manualmente.</p>
@@ -537,7 +535,7 @@
                         <li>No seu repositório, clique na aba <strong>"Settings"</strong> (Configurações).</li>
                         <li>No menu lateral, clique em <strong>"Pages"</strong> (Páginas).</li>
                         <li>Em "Source" (Fonte), selecione <strong>"Deploy from a branch"</strong>.</li>
-                        <li>Em "Branch", selecione <strong>`main`</strong> (ou `master`) e na pasta, mantenha **`/ (root)`**.</li>
+                        <li>Em "Branch", selecione <strong>main</strong> (ou master) e na pasta, mantenha <strong>/ (root)</strong>.</li>
                         <li>Clique em <strong>"Save"</strong> (Salvar).</li>
                     </ol>
                 </div>
@@ -548,6 +546,7 @@
             </div>
         </div>
 
+        <!-- PASSO 6 -->
         <div class="section">
             <div class="section-header" onclick="toggleSection('passo6')">
                 <div class="section-header-left">
@@ -555,7 +554,7 @@
                     <div class="section-title">Passo 6: Ver Seu Site no Ar!</div>
                 </div>
                 <div class="section-actions">
-                    <button class="btn btn-complete" id="btn-passo6" onclick="markComplete('passo6', event)">Marcar como feito</button>
+                    <button class="btn btn-complete" onclick="markComplete('passo6', event)">Marcar como feito</button>
                     <span class="arrow" id="arrow-passo6">▼</span>
                 </div>
             </div>
@@ -587,79 +586,104 @@
     </div>
 
     <script>
-        // GARANTINDO QUE ESTA SECAO NAO QUEBRE
-        var completedSteps = {};
-        var codeVisible = false;
+        // Estado dos passos completados
+        const state = {
+            completed: {},
+            codeVisible: false
+        };
 
+        // Ícones originais de cada passo
+        const icons = {
+            'passo1': '📝',
+            'passo2': '🔐',
+            'passo3': '📁',
+            'passo4': '⬆️',
+            'passo5': '⚙️',
+            'passo6': '🎉'
+        };
+
+        // Alternar visibilidade da seção
         function toggleSection(id) {
-            var content = document.getElementById('content-' + id);
-            var arrow = document.getElementById('arrow-' + id);
+            const content = document.getElementById('content-' + id);
+            const arrow = document.getElementById('arrow-' + id);
             
-            if (content && arrow) { // Verifica se os elementos existem
-                if (content.classList.contains('show')) {
-                    content.classList.remove('show');
-                    arrow.classList.remove('rotated');
-                } else {
-                    content.classList.add('show');
-                    arrow.classList.add('rotated');
-                }
+            if (content.classList.contains('show')) {
+                content.classList.remove('show');
+                arrow.classList.remove('rotated');
+            } else {
+                content.classList.add('show');
+                arrow.classList.add('rotated');
             }
         }
 
+        // Marcar passo como completo
         function markComplete(step, event) {
             event.stopPropagation();
-            var btn = document.getElementById('btn-' + step);
-            var icon = document.getElementById('icon-' + step);
             
-            if (btn && icon) { // Verifica se os elementos existem
-                if (completedSteps[step]) {
-                    completedSteps[step] = false;
-                    btn.classList.remove('completed');
-                    btn.textContent = 'Marcar como feito';
-                    icon.classList.remove('completed');
-                    icon.textContent = getOriginalIcon(step);
-                } else {
-                    completedSteps[step] = true;
-                    btn.classList.add('completed');
-                    btn.textContent = 'Feito';
-                    icon.classList.add('completed');
-                    icon.textContent = '✓';
-                }
+            const btn = event.target.closest('.btn-complete');
+            const icon = document.getElementById('icon-' + step);
+            
+            if (state.completed[step]) {
+                // Desmarcar
+                state.completed[step] = false;
+                btn.classList.remove('completed');
+                btn.textContent = 'Marcar como feito';
+                icon.classList.remove('completed');
+                icon.textContent = icons[step];
+            } else {
+                // Marcar
+                state.completed[step] = true;
+                btn.classList.add('completed');
+                btn.textContent = '✓ Feito';
+                icon.classList.add('completed');
+                icon.textContent = '✓';
             }
         }
-        
-        // FUNCAO CORRIGIDA: Usa uma string vazia como fallback de forma segura
-        function getOriginalIcon(step) {
-            var icons = {
-                'passo1': '📝',
-                'passo2': '🔐',
-                'passo3': '📁',
-                'passo4': '⬆️',
-                'passo5-config': '⚙️', 
-                'passo6': '🎉'
-            };
-            return icons[step] || ''; 
-        }
 
+        // Alternar código
         function toggleCode() {
-            var codeBlock = document.getElementById('code-block');
-            var toggleText = document.getElementById('code-toggle-text');
+            const codeBlock = document.getElementById('code-block');
+            const toggleText = document.getElementById('code-toggle-text');
             
-            if (codeBlock && toggleText) {
-                if (codeVisible) {
-                    codeBlock.classList.remove('show');
-                    toggleText.textContent = 'Ver Codigo';
-                    codeVisible = false;
-                } else {
-                    codeBlock.classList.add('show');
-                    toggleText.textContent = 'Ocultar Codigo';
-                    codeVisible = true;
-                }
+            if (state.codeVisible) {
+                codeBlock.classList.remove('show');
+                toggleText.textContent = 'Ver Codigo';
+                state.codeVisible = false;
+            } else {
+                codeBlock.classList.add('show');
+                toggleText.textContent = 'Ocultar Codigo';
+                state.codeVisible = true;
             }
         }
 
+        // Copiar código
         function copyCode() {
-            var codeText = '<!DOCTYPE html>\n<html lang="pt-BR">\n<head>\n    <meta charset="UTF-8">\n    <title>Meu Primeiro Projeto</title>\n    <style>\n        body {\n            font-family: Arial, sans-serif;\n            max-width: 800px;\n            margin: 50px auto;\n            padding: 20px;\n            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);\n            color: white;\n        }\n        .container {\n            background: rgba(255, 255, 255, 0.1);\n            padding: 40px;\n            border-radius: 20px;\n        }\n        h1 { \n            text-align: center;\n            animation: fadeIn 1s ease-in;\n        }\n        button {\n            background: #4CAF50;\n            color: white;
+            const codeText = `<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Meu Primeiro Projeto</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+        .container {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 40px;
+            border-radius: 20px;
+        }
+        h1 { 
+            text-align: center;
+            animation: fadeIn 1s ease-in;
+        }
+        button {
+            background: #4CAF50;
+            color: white;
             padding: 15px 30px;
             border: none;
             border-radius: 10px;
@@ -667,14 +691,32 @@
             display: block;
             margin: 20px auto;
             font-size: 16px;
-        }\n        @keyframes fadeIn {\n            from { opacity: 0; }\n            to { opacity: 1; }\n        }\n    </style>\n</head>\n<body>\n    <div class="container">\n        <h1>Meu Site esta no Ar!</h1>\n        <p>Este e meu primeiro projeto publicado no GitHub.</p>\n        <button onclick="alert(\'Parabens! Voce conseguiu!\')">\n            Clique Aqui\n        </button>\n    </div>\n</body>\n</html>';
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Meu Site esta no Ar!</h1>
+        <p>Este e meu primeiro projeto publicado no GitHub.</p>
+        <button onclick="alert('Parabens! Voce conseguiu!')">
+            Clique Aqui
+        </button>
+    </div>
+</body>
+</html>`;
             
-            navigator.clipboard.writeText(codeText).then(function() {
-                var copyText = document.getElementById('copy-text');
-                copyText.textContent = 'Copiado!';
-                setTimeout(function() {
+            navigator.clipboard.writeText(codeText).then(() => {
+                const copyText = document.getElementById('copy-text');
+                copyText.textContent = '✓ Copiado!';
+                setTimeout(() => {
                     copyText.textContent = 'Copiar Codigo';
                 }, 2000);
+            }).catch(err => {
+                alert('Erro ao copiar. Tente selecionar e copiar manualmente.');
             });
         }
     </script>
