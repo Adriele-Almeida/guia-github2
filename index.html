@@ -41,7 +41,7 @@
         }
 
         .time-badge {
-            display: none; /* Removido conforme solicitacao */
+            display: none;
             background: rgba(255, 255, 255, 0.2);
             padding: 10px 20px;
             border-radius: 25px;
@@ -547,6 +547,7 @@
                 </div>
             </div>
         </div>
+
         <div class="section">
             <div class="section-header" onclick="toggleSection('passo6')">
                 <div class="section-header-left">
@@ -586,6 +587,7 @@
     </div>
 
     <script>
+        // GARANTINDO QUE ESTA SECAO NAO QUEBRE
         var completedSteps = {};
         var codeVisible = false;
 
@@ -593,12 +595,14 @@
             var content = document.getElementById('content-' + id);
             var arrow = document.getElementById('arrow-' + id);
             
-            if (content.classList.contains('show')) {
-                content.classList.remove('show');
-                arrow.classList.remove('rotated');
-            } else {
-                content.classList.add('show');
-                arrow.classList.add('rotated');
+            if (content && arrow) { // Verifica se os elementos existem
+                if (content.classList.contains('show')) {
+                    content.classList.remove('show');
+                    arrow.classList.remove('rotated');
+                } else {
+                    content.classList.add('show');
+                    arrow.classList.add('rotated');
+                }
             }
         }
 
@@ -607,53 +611,63 @@
             var btn = document.getElementById('btn-' + step);
             var icon = document.getElementById('icon-' + step);
             
-            if (completedSteps[step]) {
-                completedSteps[step] = false;
-                btn.classList.remove('completed');
-                btn.textContent = 'Marcar como feito';
-                icon.classList.remove('completed');
-                icon.textContent = getOriginalIcon(step);
-            } else {
-                completedSteps[step] = true;
-                btn.classList.add('completed');
-                btn.textContent = 'Feito';
-                icon.classList.add('completed');
-                icon.textContent = '✓';
+            if (btn && icon) { // Verifica se os elementos existem
+                if (completedSteps[step]) {
+                    completedSteps[step] = false;
+                    btn.classList.remove('completed');
+                    btn.textContent = 'Marcar como feito';
+                    icon.classList.remove('completed');
+                    icon.textContent = getOriginalIcon(step);
+                } else {
+                    completedSteps[step] = true;
+                    btn.classList.add('completed');
+                    btn.textContent = 'Feito';
+                    icon.classList.add('completed');
+                    icon.textContent = '✓';
+                }
             }
         }
-
+        
+        // FUNCAO CORRIGIDA: Usa uma string vazia como fallback de forma segura
         function getOriginalIcon(step) {
-            // FUNCAO QUE GARANTE O ICONE CORRETO PARA CADA PASSO
             var icons = {
                 'passo1': '📝',
                 'passo2': '🔐',
                 'passo3': '📁',
                 'passo4': '⬆️',
-                'passo5-config': '⚙️', // Novo ID de passo
-                'passo6': '🎉'        // ID renomeado
+                'passo5-config': '⚙️', 
+                'passo6': '🎉'
             };
-            return icons[step];
+            return icons[step] || ''; 
         }
 
         function toggleCode() {
             var codeBlock = document.getElementById('code-block');
             var toggleText = document.getElementById('code-toggle-text');
             
-            if (codeVisible) {
-                codeBlock.classList.remove('show');
-                toggleText.textContent = 'Ver Codigo';
-                codeVisible = false;
-            } else {
-                codeBlock.classList.add('show');
-                toggleText.textContent = 'Ocultar Codigo';
-                codeVisible = true;
+            if (codeBlock && toggleText) {
+                if (codeVisible) {
+                    codeBlock.classList.remove('show');
+                    toggleText.textContent = 'Ver Codigo';
+                    codeVisible = false;
+                } else {
+                    codeBlock.classList.add('show');
+                    toggleText.textContent = 'Ocultar Codigo';
+                    codeVisible = true;
+                }
             }
         }
 
         function copyCode() {
-            var codeText = '<!DOCTYPE html>\n<html lang="pt-BR">\n<head>\n    <meta charset="UTF-8">\n    <title>Meu Primeiro Projeto</title>\n    <style>\n        body {\n            font-family: Arial, sans-serif;\n            max-width: 800px;\n            margin: 50px auto;\n            padding: 20px;\n            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);\n            color: white;\n        }\n        .container {\n            background: rgba(255, 255, 255, 0.1);\n            padding: 40px;\n            border-radius: 20px;\n        }\n        h1 { \n            text-align: center;\n            animation: fadeIn 1s ease-in;\n        }\n        button {\n            background: #4CAF50;\n            color: white;\n            padding: 15px 30px;\n            border: none;\n            border-radius: 10px;\n            cursor: pointer;\n            display: block;\n            margin: 20px auto;\n            font-size: 16px;\n        }\n        @keyframes fadeIn {\n            from { opacity: 0; }\n            to { opacity: 1; }
-        }\n    </style>\n</head>\n<body>\n    <div class="container">\n        <h1>Meu Site esta no Ar!</h1>\n        <p>Este e meu primeiro projeto publicado no GitHub.</p>\n        <button onclick="alert(\'Parabens! Voce conseguiu!\')">\n            Clique Aqui
-        </button>\n    </div>\n</body>\n</html>';
+            var codeText = '<!DOCTYPE html>\n<html lang="pt-BR">\n<head>\n    <meta charset="UTF-8">\n    <title>Meu Primeiro Projeto</title>\n    <style>\n        body {\n            font-family: Arial, sans-serif;\n            max-width: 800px;\n            margin: 50px auto;\n            padding: 20px;\n            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);\n            color: white;\n        }\n        .container {\n            background: rgba(255, 255, 255, 0.1);\n            padding: 40px;\n            border-radius: 20px;\n        }\n        h1 { \n            text-align: center;\n            animation: fadeIn 1s ease-in;\n        }\n        button {\n            background: #4CAF50;\n            color: white;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            display: block;
+            margin: 20px auto;
+            font-size: 16px;
+        }\n        @keyframes fadeIn {\n            from { opacity: 0; }\n            to { opacity: 1; }\n        }\n    </style>\n</head>\n<body>\n    <div class="container">\n        <h1>Meu Site esta no Ar!</h1>\n        <p>Este e meu primeiro projeto publicado no GitHub.</p>\n        <button onclick="alert(\'Parabens! Voce conseguiu!\')">\n            Clique Aqui\n        </button>\n    </div>\n</body>\n</html>';
             
             navigator.clipboard.writeText(codeText).then(function() {
                 var copyText = document.getElementById('copy-text');
