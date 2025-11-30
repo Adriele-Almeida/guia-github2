@@ -1,0 +1,639 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guia: Do Codigo ao GitHub</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .header {
+            text-align: center;
+            color: white;
+            margin-bottom: 40px;
+            animation: fadeIn 0.8s ease-out;
+        }
+
+        .header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+
+        .header p {
+            font-size: 1.2em;
+            opacity: 0.9;
+        }
+
+        .time-badge {
+            display: none; /* Removido conforme solicitacao */
+            background: rgba(255, 255, 255, 0.2);
+            padding: 10px 20px;
+            border-radius: 25px;
+            margin-top: 15px;
+            backdrop-filter: blur(10px);
+        }
+
+        .section {
+            background: white;
+            border-radius: 15px;
+            margin-bottom: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            animation: slideUp 0.5s ease-out;
+        }
+
+        .section-header {
+            padding: 25px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: linear-gradient(to right, #f8f9fa, #e9ecef);
+            transition: all 0.3s;
+        }
+
+        .section-header:hover {
+            background: linear-gradient(to right, #e9ecef, #dee2e6);
+        }
+
+        .section-header-left {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .icon {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+        }
+
+        .icon.completed {
+            background: linear-gradient(135deg, #10b981, #059669);
+        }
+
+        .section-title {
+            font-size: 1.3em;
+            font-weight: bold;
+            color: #333;
+        }
+
+        .section-actions {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+        }
+
+        .btn {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: all 0.3s;
+        }
+
+        .btn-complete {
+            background: #e5e7eb;
+            color: #374151;
+        }
+
+        .btn-complete:hover {
+            background: #d1d5db;
+        }
+
+        .btn-complete.completed {
+            background: #10b981;
+            color: white;
+        }
+
+        .arrow {
+            font-size: 24px;
+            color: #666;
+            transition: transform 0.3s;
+        }
+
+        .arrow.rotated {
+            transform: rotate(180deg);
+        }
+
+        .section-content {
+            display: none;
+            padding: 30px;
+            border-top: 2px solid #e5e7eb;
+            animation: fadeIn 0.3s ease-out;
+        }
+
+        .section-content.show {
+            display: block;
+        }
+
+        .alert {
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            border-left: 4px solid;
+        }
+
+        .alert-blue {
+            background: #dbeafe;
+            border-color: #3b82f6;
+            color: #1e40af;
+        }
+
+        .alert-purple {
+            background: #f3e8ff;
+            border-color: #a855f7;
+            color: #6b21a8;
+        }
+
+        .alert-green {
+            background: #d1fae5;
+            border-color: #10b981;
+            color: #065f46;
+        }
+
+        .alert-yellow {
+            background: #fef3c7;
+            border-color: #f59e0b;
+            color: #92400e;
+        }
+
+        .alert-red {
+            background: #fee2e2;
+            border-color: #ef4444;
+            color: #991b1b;
+        }
+
+        .alert-teal {
+            background: #ccfbf1;
+            border-color: #14b8a6;
+            color: #115e59;
+        }
+
+        .code-container {
+            background: #f3f4f6;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+
+        .code-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .code-buttons {
+            display: flex;
+            gap: 10px;
+        }
+
+        .btn-code {
+            padding: 8px 16px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: bold;
+            transition: all 0.3s;
+        }
+
+        .btn-show {
+            background: #6b7280;
+            color: white;
+        }
+
+        .btn-show:hover {
+            background: #4b5563;
+        }
+
+        .btn-copy {
+            background: #10b981;
+            color: white;
+        }
+
+        .btn-copy:hover {
+            background: #059669;
+        }
+
+        .code-block {
+            display: none;
+            background: #1f2937;
+            color: #10b981;
+            padding: 20px;
+            border-radius: 8px;
+            overflow-x: auto;
+            font-family: 'Courier New', monospace;
+            font-size: 14px;
+            line-height: 1.6;
+            white-space: pre;
+        }
+
+        .code-block.show {
+            display: block;
+        }
+
+        .final-banner {
+            background: linear-gradient(135deg, #8b5cf6, #ec4899);
+            color: white;
+            padding: 40px;
+            border-radius: 15px;
+            text-align: center;
+            margin-top: 40px;
+            animation: fadeIn 1s ease-out;
+        }
+
+        .final-banner h3 {
+            font-size: 2em;
+            margin-bottom: 15px;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        ol, ul {
+            margin-left: 20px;
+            line-height: 1.8;
+        }
+
+        li {
+            margin-bottom: 10px;
+        }
+
+        strong {
+            color: #1f2937;
+        }
+
+        a {
+            color: #3b82f6;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <img src="logo-topo.png" alt="Do Codigo ao GitHub" style="max-width: 100%; height: auto;">
+            <p>Guia prático com o passo a passo para subir seu site ou app no GitHub</p>
+            <div class="time-badge">
+                Tempo estimado: 15-20 minutos
+            </div>
+        </div>
+
+        
+
+        <div class="section">
+            <div class="section-header" onclick="toggleSection('passo1')">
+                <div class="section-header-left">
+                    <div class="icon" id="icon-passo1">📝</div>
+                    <div class="section-title">Passo 1: Criar o Arquivo HTML</div>
+                </div>
+                <div class="section-actions">
+                    <button class="btn btn-complete" id="btn-passo1" onclick="markComplete('passo1', event)">Marcar como feito</button>
+                    <span class="arrow" id="arrow-passo1">▼</span>
+                </div>
+            </div>
+            <div class="section-content" id="content-passo1">
+                <div class="alert alert-purple">
+                    <strong style="display: block; margin-bottom: 10px;">O que voce precisa fazer:</strong>
+                    <ol>
+                        <li>Abra o <strong>Bloco de Notas</strong> (Windows) ou <strong>TextEdit</strong> (Mac)</li>
+                        <li>Copie o codigo abaixo clicando no botao</li>
+                        <li>Cole no Bloco de Notas</li>
+                        <li>Salve como <strong>index.html</strong> (importante: tem que ser exatamente esse nome!)</li>
+                    </ol>
+                </div>
+
+                <div class="code-container">
+                    <div class="code-header">
+                        <strong>Seu Codigo HTML:</strong>
+                        <div class="code-buttons">
+                            <button class="btn-code btn-show" onclick="toggleCode()">
+                                <span id="code-toggle-text">Ver Codigo</span>
+                            </button>
+                            <button class="btn-code btn-copy" onclick="copyCode()">
+                                <span id="copy-text">Copiar Codigo</span>
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="code-block" id="code-block">&lt;!DOCTYPE html&gt;
+&lt;html lang="pt-BR"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;Meu Primeiro Projeto&lt;/title&gt;
+    &lt;style&gt;
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+        .container {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 40px;
+            border-radius: 20px;
+        }
+        h1 { 
+            text-align: center;
+            animation: fadeIn 1s ease-in;
+        }
+        button {
+            background: #4CAF50;
+            color: white;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            display: block;
+            margin: 20px auto;
+            font-size: 16px;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;div class="container"&gt;
+        &lt;h1&gt;Meu Site esta no Ar!&lt;/h1&gt;
+        &lt;p&gt;Este e meu primeiro projeto publicado no GitHub.&lt;/p&gt;
+        &lt;button onclick="alert('Parabens! Voce conseguiu!')"&gt;
+            Clique Aqui
+        &lt;/button&gt;
+    &lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;</div>
+                </div>
+
+                <div class="alert alert-yellow">
+                    <strong>Atencao:</strong>
+                    <p style="margin-top: 10px;">Na hora de salvar, mude "Salvar como tipo" para <strong>"Todos os arquivos"</strong> e digite <strong>index.html</strong> como nome do arquivo.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="section-header" onclick="toggleSection('passo2')">
+                <div class="section-header-left">
+                    <div class="icon" id="icon-passo2">🔐</div>
+                    <div class="section-title">Passo 2: Criar Conta no GitHub</div>
+                </div>
+                <div class="section-actions">
+                    <button class="btn btn-complete" id="btn-passo2" onclick="markComplete('passo2', event)">Marcar como feito</button>
+                    <span class="arrow" id="arrow-passo2">▼</span>
+                </div>
+            </div>
+            <div class="section-content" id="content-passo2">
+                <div class="alert alert-purple">
+                    <strong style="display: block; margin-bottom: 10px;">Siga estes passos:</strong>
+                    <ol>
+                        <li>Acesse <a href="https://github.com" target="_blank">github.com</a></li>
+                        <li>Clique em <strong>"Sign up"</strong> (Cadastrar)</li>
+                        <li>Preencha seu email, uma senha forte e um nome de usuario</li>
+                        <li>Confirme seu email (verifique sua caixa de entrada)</li>
+                    </ol>
+                </div>
+
+                <div class="alert alert-green">
+                    <strong>Dica:</strong>
+                    <p style="margin-top: 10px;">Escolha um nome de usuario profissional. Exemplo: se seu nome e Maria Silva, use algo como "mariasilva" ou "maria-silva-dev".</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="section-header" onclick="toggleSection('passo3')">
+                <div class="section-header-left">
+                    <div class="icon" id="icon-passo3">📁</div>
+                    <div class="section-title">Passo 3: Criar Repositorio</div>
+                </div>
+                <div class="section-actions">
+                    <button class="btn btn-complete" id="btn-passo3" onclick="markComplete('passo3', event)">Marcar como feito</button>
+                    <span class="arrow" id="arrow-passo3">▼</span>
+                </div>
+            </div>
+            <div class="section-content" id="content-passo3">
+                <div class="alert alert-purple">
+                    <strong style="display: block; margin-bottom: 15px;">Criando seu repositorio:</strong>
+                    <ol>
+                        <li>No GitHub, clique no <strong>botao verde "New"</strong></li>
+                        <li>No campo "Repository name", digite: <strong>nome-do-projeto</strong>
+                            <div style="background: white; padding: 15px; border-radius: 8px; margin-top: 10px;">
+                                <p style="font-size: 0.9em; color: #6b21a8;">Exemplo: se seu projeto e um portfolio, digite:</p>
+                                <p style="font-family: monospace; font-weight: bold; color: #6b21a8; font-size: 1.1em;">meu-portfolio</p>
+                            </div>
+                        </li>
+                        <li>Marque a opcao <strong>"Public"</strong></li>
+                        <li>Marque <strong>"Add a README file"</strong></li>
+                        <li>Clique em <strong>"Create repository"</strong></li>
+                    </ol>
+                </div>
+
+                <div class="alert alert-red">
+                    <strong>Muito importante:</strong>
+                    <p style="margin-top: 10px;">Para sites de projeto (nao seu site pessoal), o nome pode ser qualquer um, como <strong>nome-do-projeto</strong>. Isso fara seu site ficar em: <strong>seu-usuario.github.io/nome-do-projeto/</strong></p>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="section-header" onclick="toggleSection('passo4')">
+                <div class="section-header-left">
+                    <div class="icon" id="icon-passo4">⬆️</div>
+                    <div class="section-title">Passo 4: Fazer Upload do Arquivo</div>
+                </div>
+                <div class="section-actions">
+                    <button class="btn btn-complete" id="btn-passo4" onclick="markComplete('passo4', event)">Marcar como feito</button>
+                    <span class="arrow" id="arrow-passo4">▼</span>
+                </div>
+            </div>
+            <div class="section-content" id="content-passo4">
+                <div class="alert alert-teal">
+                    <strong style="display: block; margin-bottom: 10px;">Enviando seu arquivo:</strong>
+                    <ol>
+                        <li>Dentro do repositorio que voce criou, clique em <strong>"Add file"</strong></li>
+                        <li>Clique em <strong>"Upload files"</strong></li>
+                        <li>Arraste o arquivo <strong>index.html</strong> que voce salvou OU clique em "choose your files"</li>
+                        <li>Na parte de baixo, escreva uma mensagem. Exemplo: "Meu primeiro site"</li>
+                        <li>Clique no botao verde <strong>"Commit changes"</strong></li>
+                    </ol>
+                </div>
+
+                <div class="alert alert-blue">
+                    <strong>Aguarde alguns minutos...</strong>
+                    <p style="margin-top: 10px;">O GitHub precisa de 2 a 5 minutos para processar e publicar seu site. Depois desse tempo, seu site estara no ar!</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="section-header" onclick="toggleSection('passo5')">
+                <div class="section-header-left">
+                    <div class="icon" id="icon-passo5">🎉</div>
+                    <div class="section-title">Passo 5: Ver Seu Site no Ar!</div>
+                </div>
+                <div class="section-actions">
+                    <button class="btn btn-complete" id="btn-passo5" onclick="markComplete('passo5', event)">Marcar como feito</button>
+                    <span class="arrow" id="arrow-passo5">▼</span>
+                </div>
+            </div>
+            <div class="section-content" id="content-passo5">
+                <div style="background: linear-gradient(to right, #f3e8ff, #fce7f3); padding: 30px; border-radius: 15px; margin-bottom: 20px;">
+                    <h3 style="color: #7c3aed; font-size: 1.5em; margin-bottom: 15px;">Parabens!</h3>
+                    <p style="color: #7c3aed; font-size: 1.1em; margin-bottom: 15px;">Seu site esta no ar! Acesse em:</p>
+                    <div style="background: white; padding: 20px; border-radius: 10px; box-shadow: 0 4px 15px rgba(0,0,0,0.1);">
+                        <p style="font-family: monospace; color: #7c3aed; font-weight: bold; text-align: center; font-size: 1.2em;">
+                            https://seu-usuario.github.io/nome-do-projeto/
+                        </p>
+                        <p style="text-align: center; margin-top: 10px; color: #666; font-size: 0.9em;">
+                            (substitua "seu-usuario" pelo seu nome de usuario do GitHub e "nome-do-projeto" pelo nome do seu repositorio)
+                        </p>
+                    </div>
+                </div>
+
+                
+
+
+            </div>
+        </div>
+
+        <div class="final-banner">
+            <h3>Voce Conseguiu!</h3>
+            <p style="font-size: 1.1em; margin: 15px 0;">
+                Agora voce sabe criar um site e publica-lo no GitHub!
+            </p>
+            <p style="opacity: 0.9;">
+                Continue praticando e criando novos projetos. Quanto mais voce fizer, melhor ficara!
+            </p>
+        </div>
+    </div>
+
+    <script>
+        var completedSteps = {};
+        var codeVisible = false;
+
+        function toggleSection(id) {
+            var content = document.getElementById('content-' + id);
+            var arrow = document.getElementById('arrow-' + id);
+            
+            if (content.classList.contains('show')) {
+                content.classList.remove('show');
+                arrow.classList.remove('rotated');
+            } else {
+                content.classList.add('show');
+                arrow.classList.add('rotated');
+            }
+        }
+
+        function markComplete(step, event) {
+            event.stopPropagation();
+            var btn = document.getElementById('btn-' + step);
+            var icon = document.getElementById('icon-' + step);
+            
+            if (completedSteps[step]) {
+                completedSteps[step] = false;
+                btn.classList.remove('completed');
+                btn.textContent = 'Marcar como feito';
+                icon.classList.remove('completed');
+                icon.textContent = getOriginalIcon(step);
+            } else {
+                completedSteps[step] = true;
+                btn.classList.add('completed');
+                btn.textContent = 'Feito';
+                icon.classList.add('completed');
+                icon.textContent = '✓';
+            }
+        }
+
+        function getOriginalIcon(step) {
+            var icons = {
+                'passo1': '📝',
+                'passo2': '🔐',
+                'passo3': '📁',
+                'passo4': '⬆️',
+                'passo5': '🎉'
+            };
+            return icons[step];
+        }
+
+        function toggleCode() {
+            var codeBlock = document.getElementById('code-block');
+            var toggleText = document.getElementById('code-toggle-text');
+            
+            if (codeVisible) {
+                codeBlock.classList.remove('show');
+                toggleText.textContent = 'Ver Codigo';
+                codeVisible = false;
+            } else {
+                codeBlock.classList.add('show');
+                toggleText.textContent = 'Ocultar Codigo';
+                codeVisible = true;
+            }
+        }
+
+        function copyCode() {
+            var codeText = '<!DOCTYPE html>\n<html lang="pt-BR">\n<head>\n    <meta charset="UTF-8">\n    <title>Meu Primeiro Projeto</title>\n    <style>\n        body {\n            font-family: Arial, sans-serif;\n            max-width: 800px;\n            margin: 50px auto;\n            padding: 20px;\n            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);\n            color: white;\n        }\n        .container {\n            background: rgba(255, 255, 255, 0.1);\n            padding: 40px;\n            border-radius: 20px;\n        }\n        h1 { \n            text-align: center;\n            animation: fadeIn 1s ease-in;\n        }\n        button {\n            background: #4CAF50;\n            color: white;\n            padding: 15px 30px;\n            border: none;\n            border-radius: 10px;\n            cursor: pointer;\n            display: block;\n            margin: 20px auto;\n            font-size: 16px;\n        }\n        @keyframes fadeIn {\n            from { opacity: 0; }\n            to { opacity: 1; }\n        }\n    </style>\n</head>\n<body>\n    <div class="container">\n        <h1>Meu Site esta no Ar!</h1>\n        <p>Este e meu primeiro projeto publicado no GitHub.</p>\n        <button onclick="alert(\'Parabens! Voce conseguiu!\')">\n            Clique Aqui
+        </button>\n    </div>\n</body>\n</html>';
+            
+            navigator.clipboard.writeText(codeText).then(function() {
+                var copyText = document.getElementById('copy-text');
+                copyText.textContent = 'Copiado!';
+                setTimeout(function() {
+                    copyText.textContent = 'Copiar Codigo';
+                }, 2000);
+            });
+        }
+    </script>
+</body>
+</html>
