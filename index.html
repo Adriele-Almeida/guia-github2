@@ -327,8 +327,6 @@
             </div>
         </div>
 
-        
-
         <div class="section">
             <div class="section-header" onclick="toggleSection('passo1')">
                 <div class="section-header-left">
@@ -511,24 +509,56 @@
                 </div>
 
                 <div class="alert alert-blue">
-                    <strong>Aguarde alguns minutos...</strong>
-                    <p style="margin-top: 10px;">O GitHub precisa de 2 a 5 minutos para processar e publicar seu site. Depois desse tempo, seu site estara no ar!</p>
+                    <strong>Aguarde a próxima etapa...</strong>
+                    <p style="margin-top: 10px;">Voce precisa configurar o GitHub Pages para que ele saiba qual arquivo publicar.</p>
                 </div>
             </div>
         </div>
-
+        
         <div class="section">
-            <div class="section-header" onclick="toggleSection('passo5')">
+            <div class="section-header" onclick="toggleSection('passo5-config')">
                 <div class="section-header-left">
-                    <div class="icon" id="icon-passo5">🎉</div>
-                    <div class="section-title">Passo 5: Ver Seu Site no Ar!</div>
+                    <div class="icon" id="icon-passo5-config">⚙️</div>
+                    <div class="section-title">Passo 5: Ativar o GitHub Pages</div>
                 </div>
                 <div class="section-actions">
-                    <button class="btn btn-complete" id="btn-passo5" onclick="markComplete('passo5', event)">Marcar como feito</button>
-                    <span class="arrow" id="arrow-passo5">▼</span>
+                    <button class="btn btn-complete" id="btn-passo5-config" onclick="markComplete('passo5-config', event)">Marcar como feito</button>
+                    <span class="arrow" id="arrow-passo5-config">▼</span>
                 </div>
             </div>
-            <div class="section-content" id="content-passo5">
+            <div class="section-content" id="content-passo5-config">
+                <div class="alert alert-red">
+                    <strong style="display: block; margin-bottom: 10px;">Aviso Importante:</strong>
+                    <p style="margin-top: 10px;">Como este é um "Site de Projeto", você precisa ativar a publicação manualmente.</p>
+                </div>
+                <div class="alert alert-purple">
+                    <strong style="display: block; margin-bottom: 15px;">Ative seu site:</strong>
+                    <ol>
+                        <li>No seu repositório, clique na aba <strong>"Settings"</strong> (Configurações).</li>
+                        <li>No menu lateral, clique em <strong>"Pages"</strong> (Páginas).</li>
+                        <li>Em "Source" (Fonte), selecione <strong>"Deploy from a branch"</strong>.</li>
+                        <li>Em "Branch", selecione <strong>`main`</strong> (ou `master`) e na pasta, mantenha **`/ (root)`**.</li>
+                        <li>Clique em <strong>"Save"</strong> (Salvar).</li>
+                    </ol>
+                </div>
+                <div class="alert alert-blue">
+                    <strong>Processando...</strong>
+                    <p style="margin-top: 10px;">O GitHub levará alguns minutos (de 2 a 5) para processar as configurações e publicar seu site no link.</p>
+                </div>
+            </div>
+        </div>
+        <div class="section">
+            <div class="section-header" onclick="toggleSection('passo6')">
+                <div class="section-header-left">
+                    <div class="icon" id="icon-passo6">🎉</div>
+                    <div class="section-title">Passo 6: Ver Seu Site no Ar!</div>
+                </div>
+                <div class="section-actions">
+                    <button class="btn btn-complete" id="btn-passo6" onclick="markComplete('passo6', event)">Marcar como feito</button>
+                    <span class="arrow" id="arrow-passo6">▼</span>
+                </div>
+            </div>
+            <div class="section-content" id="content-passo6">
                 <div style="background: linear-gradient(to right, #f3e8ff, #fce7f3); padding: 30px; border-radius: 15px; margin-bottom: 20px;">
                     <h3 style="color: #7c3aed; font-size: 1.5em; margin-bottom: 15px;">Parabens!</h3>
                     <p style="color: #7c3aed; font-size: 1.1em; margin-bottom: 15px;">Seu site esta no ar! Acesse em:</p>
@@ -541,10 +571,6 @@
                         </p>
                     </div>
                 </div>
-
-                
-
-
             </div>
         </div>
 
@@ -597,12 +623,14 @@
         }
 
         function getOriginalIcon(step) {
+            // FUNCAO QUE GARANTE O ICONE CORRETO PARA CADA PASSO
             var icons = {
                 'passo1': '📝',
                 'passo2': '🔐',
                 'passo3': '📁',
                 'passo4': '⬆️',
-                'passo5': '🎉'
+                'passo5-config': '⚙️', // Novo ID de passo
+                'passo6': '🎉'        // ID renomeado
             };
             return icons[step];
         }
@@ -623,7 +651,8 @@
         }
 
         function copyCode() {
-            var codeText = '<!DOCTYPE html>\n<html lang="pt-BR">\n<head>\n    <meta charset="UTF-8">\n    <title>Meu Primeiro Projeto</title>\n    <style>\n        body {\n            font-family: Arial, sans-serif;\n            max-width: 800px;\n            margin: 50px auto;\n            padding: 20px;\n            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);\n            color: white;\n        }\n        .container {\n            background: rgba(255, 255, 255, 0.1);\n            padding: 40px;\n            border-radius: 20px;\n        }\n        h1 { \n            text-align: center;\n            animation: fadeIn 1s ease-in;\n        }\n        button {\n            background: #4CAF50;\n            color: white;\n            padding: 15px 30px;\n            border: none;\n            border-radius: 10px;\n            cursor: pointer;\n            display: block;\n            margin: 20px auto;\n            font-size: 16px;\n        }\n        @keyframes fadeIn {\n            from { opacity: 0; }\n            to { opacity: 1; }\n        }\n    </style>\n</head>\n<body>\n    <div class="container">\n        <h1>Meu Site esta no Ar!</h1>\n        <p>Este e meu primeiro projeto publicado no GitHub.</p>\n        <button onclick="alert(\'Parabens! Voce conseguiu!\')">\n            Clique Aqui
+            var codeText = '<!DOCTYPE html>\n<html lang="pt-BR">\n<head>\n    <meta charset="UTF-8">\n    <title>Meu Primeiro Projeto</title>\n    <style>\n        body {\n            font-family: Arial, sans-serif;\n            max-width: 800px;\n            margin: 50px auto;\n            padding: 20px;\n            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);\n            color: white;\n        }\n        .container {\n            background: rgba(255, 255, 255, 0.1);\n            padding: 40px;\n            border-radius: 20px;\n        }\n        h1 { \n            text-align: center;\n            animation: fadeIn 1s ease-in;\n        }\n        button {\n            background: #4CAF50;\n            color: white;\n            padding: 15px 30px;\n            border: none;\n            border-radius: 10px;\n            cursor: pointer;\n            display: block;\n            margin: 20px auto;\n            font-size: 16px;\n        }\n        @keyframes fadeIn {\n            from { opacity: 0; }\n            to { opacity: 1; }
+        }\n    </style>\n</head>\n<body>\n    <div class="container">\n        <h1>Meu Site esta no Ar!</h1>\n        <p>Este e meu primeiro projeto publicado no GitHub.</p>\n        <button onclick="alert(\'Parabens! Voce conseguiu!\')">\n            Clique Aqui
         </button>\n    </div>\n</body>\n</html>';
             
             navigator.clipboard.writeText(codeText).then(function() {
