@@ -1,0 +1,1282 @@
+[
+  {
+    "id": 1,
+    "category": "vendas",
+    "titulo": "Cliente sumiu? 7 passos pra reativar o contato",
+    "gancho": "Mandou mensagem e ficou no vácuo? Isso tem solução.",
+    "slides": [
+      {
+        "numero": 1,
+        "tipo": "Capa",
+        "emoji": "📵",
+        "titulo": "Cliente desapareceu",
+        "texto": "Como retomar a conversa sem parecer desesperado"
+      },
+      {
+        "numero": 2,
+        "tipo": "Introdução",
+        "emoji": "👀",
+        "titulo": "Primeiro diagnóstico",
+        "texto": "Sumir pode ser falta de prioridade, não desinteresse.\nSeu trabalho é reduzir a fricção."
+      },
+      {
+        "numero": 3,
+        "tipo": null,
+        "emoji": "📝",
+        "titulo": "Retome com contexto",
+        "texto": "Exemplo: \"Oi Ana, vi aquele apê com varanda que você curtiu. Quer que eu te mande as fotos atualizadas?\""
+      },
+      {
+        "numero": 4,
+        "tipo": null,
+        "emoji": "⏱️",
+        "titulo": "Crie um motivo claro",
+        "texto": "Exemplo: \"O imóvel X teve redução de preço hoje. Posso te ligar 2 minutos?\""
+      },
+      {
+        "numero": 5,
+        "tipo": null,
+        "emoji": "✅",
+        "titulo": "Facilite o próximo passo",
+        "texto": "Dê duas opções: \"Prefere visitar sábado de manhã ou domingo à tarde?\""
+      },
+      {
+        "numero": 6,
+        "tipo": null,
+        "emoji": "📌",
+        "titulo": "Se não responder",
+        "texto": "Envie um último toque educado: \"Sem problema! Se o timing mudar, estou por aqui.\""
+      },
+      {
+        "numero": 7,
+        "tipo": "Encerramento",
+        "emoji": "💡",
+        "titulo": "Checklist rápido",
+        "texto": "Use isso antes de arquivar o lead:",
+        "lista": [
+          "Retomou com contexto",
+          "Ofereceu valor novo",
+          "Deu escolha de horário"
+        ],
+        "cta": "Salva esse post"
+      }
+    ],
+    "legenda": "📵 Cliente sumiu? Não é o fim.\n\nRetomar com contexto + motivo real de contato aumenta resposta.\n\nExemplo real e simples funciona mais do que textão.\n\n#corretor #imóveis #vendas #followup #corretordeimoveis"
+  },
+  {
+    "id": 2,
+    "category": "vendas",
+    "titulo": "Precificação sem erro: evite 5 armadilhas",
+    "gancho": "Preço errado faz o imóvel encalhar e você perder credibilidade.",
+    "slides": [
+      {
+        "numero": 1,
+        "tipo": "Capa",
+        "emoji": "💰",
+        "titulo": "Erros na precificação",
+        "texto": "O que faz você perder o cliente na hora de vender"
+      },
+      {
+        "numero": 2,
+        "tipo": "Introdução",
+        "emoji": "📊",
+        "titulo": "O preço é a vitrine",
+        "texto": "Um valor fora da realidade derruba visitas e propostas."
+      },
+      {
+        "numero": 3,
+        "tipo": null,
+        "emoji": "🏘️",
+        "titulo": "Comparar imóveis diferentes",
+        "texto": "Exemplo: comparar 80m² com 120m² só porque são no mesmo bairro."
+      },
+      {
+        "numero": 4,
+        "tipo": null,
+        "emoji": "📈",
+        "titulo": "Ignorar liquidez",
+        "texto": "Exemplo: preço médio de anúncios não é preço de venda."
+      },
+      {
+        "numero": 5,
+        "tipo": null,
+        "emoji": "🧾",
+        "titulo": "Esquecer custos do proprietário",
+        "texto": "Exemplo: condomínio alto + IPTU elevado exigem preço mais competitivo."
+      },
+      {
+        "numero": 6,
+        "tipo": null,
+        "emoji": "⏳",
+        "titulo": "Não revisar após 30 dias",
+        "texto": "Se não houve visitas, revise fotos, anúncio e preço."
+      },
+      {
+        "numero": 7,
+        "tipo": "Encerramento",
+        "emoji": "✅",
+        "titulo": "Plano rápido",
+        "texto": "Antes de precificar, faça:",
+        "lista": [
+          "Comparativo de vendidos",
+          "Análise de liquidez",
+          "Ajuste de diferencial"
+        ],
+        "cta": "Comenta aqui qual foi seu desafio"
+      }
+    ],
+    "legenda": "💰 Precificar bem é meio caminho para vender rápido.\n\nUse dados de imóveis vendidos, não só anúncios.\n\n#corretor #imóveis #precificacao #vendas"
+  },
+  {
+    "id": 3,
+    "category": "vendas",
+    "titulo": "Follow-up sem ser chato: 6 mensagens prontas",
+    "gancho": "Você não precisa insistir, precisa ser relevante.",
+    "slides": [
+      {
+        "numero": 1,
+        "tipo": "Capa",
+        "emoji": "💬",
+        "titulo": "Follow-up sem pressão",
+        "texto": "6 mensagens que geram resposta"
+      },
+      {
+        "numero": 2,
+        "tipo": "Introdução",
+        "emoji": "🎯",
+        "titulo": "Regra de ouro",
+        "texto": "Sempre traga algo novo: informação, opção ou vantagem."
+      },
+      {
+        "numero": 3,
+        "tipo": null,
+        "emoji": "🆕",
+        "titulo": "Mensagem 1",
+        "texto": "\"Saiu um imóvel com planta parecida e preço melhor. Quer ver?\""
+      },
+      {
+        "numero": 4,
+        "tipo": null,
+        "emoji": "📅",
+        "titulo": "Mensagem 2",
+        "texto": "\"Tenho duas janelas de visita essa semana. Qual horário te atende?\""
+      },
+      {
+        "numero": 5,
+        "tipo": null,
+        "emoji": "📷",
+        "titulo": "Mensagem 3",
+        "texto": "\"Atualizei as fotos com a reforma pronta. Posso te enviar?\""
+      },
+      {
+        "numero": 6,
+        "tipo": null,
+        "emoji": "💵",
+        "titulo": "Mensagem 4",
+        "texto": "\"O proprietário aceitou negociar. Quer saber os limites?\""
+      },
+      {
+        "numero": 7,
+        "tipo": "Encerramento",
+        "emoji": "✅",
+        "titulo": "Use sem medo",
+        "texto": "Escolha 1 mensagem por semana:",
+        "lista": [
+          "Atualização real",
+          "Opção de agenda",
+          "Valor claro"
+        ],
+        "cta": "Salva esse post"
+      }
+    ],
+    "legenda": "💬 Follow-up não é insistência, é relevância.\n\nTeste essas mensagens e veja qual gera mais retorno.\n\n#corretor #imóveis #followup #vendas"
+  },
+  {
+    "id": 4,
+    "category": "vendas",
+    "titulo": "Scripts de primeiro contato que funcionam",
+    "gancho": "O primeiro minuto define se o lead vira visita.",
+    "slides": [
+      {
+        "numero": 1,
+        "tipo": "Capa",
+        "emoji": "📞",
+        "titulo": "Primeiro contato",
+        "texto": "Scripts curtos para abrir conversa"
+      },
+      {
+        "numero": 2,
+        "tipo": "Introdução",
+        "emoji": "⚡",
+        "titulo": "Seja direto",
+        "texto": "Nada de textão. 2 frases e 1 pergunta."
+      },
+      {
+        "numero": 3,
+        "tipo": null,
+        "emoji": "🏠",
+        "titulo": "Script para anúncio",
+        "texto": "\"Oi, vi seu interesse no apê da Rua X. O que é prioridade: metragem, garagem ou preço?\""
+      },
+      {
+        "numero": 4,
+        "tipo": null,
+        "emoji": "📍",
+        "titulo": "Script para indicação",
+        "texto": "\"Fulano comentou que você busca imóvel na região Y. Posso te mandar 2 opções alinhadas?\""
+      },
+      {
+        "numero": 5,
+        "tipo": null,
+        "emoji": "🧭",
+        "titulo": "Script para captação",
+        "texto": "\"Trabalho com imóveis semelhantes ao seu no bairro. Posso mostrar valores de vendidos?\""
+      },
+      {
+        "numero": 6,
+        "tipo": null,
+        "emoji": "🔍",
+        "titulo": "Pergunta chave",
+        "texto": "\"Qual é o prazo ideal para mudar?\""
+      },
+      {
+        "numero": 7,
+        "tipo": "Encerramento",
+        "emoji": "✅",
+        "titulo": "Próximo passo",
+        "texto": "Finalize sempre com uma ação:",
+        "lista": [
+          "Envio de 2 opções",
+          "Agendar ligação",
+          "Visita rápida"
+        ],
+        "cta": "Comenta aqui qual foi seu desafio"
+      }
+    ],
+    "legenda": "📞 Primeiro contato define o ritmo. Use perguntas objetivas e leve para a próxima ação.\n\n#corretor #imóveis #script #vendas"
+  },
+  {
+    "id": 5,
+    "category": "marketing",
+    "titulo": "Stories que geram leads (sem parecer vendedor)",
+    "gancho": "Você posta todo dia e ninguém chama? Pode ser o formato.",
+    "slides": [
+      {
+        "numero": 1,
+        "tipo": "Capa",
+        "emoji": "📲",
+        "titulo": "Stories estratégicos",
+        "texto": "Como gerar conversas reais"
+      },
+      {
+        "numero": 2,
+        "tipo": "Introdução",
+        "emoji": "🎯",
+        "titulo": "O objetivo",
+        "texto": "Fazer o seguidor responder, não só assistir."
+      },
+      {
+        "numero": 3,
+        "tipo": null,
+        "emoji": "❓",
+        "titulo": "Pergunta simples",
+        "texto": "Exemplo: \"Você prefere varanda ou suíte?\""
+      },
+      {
+        "numero": 4,
+        "tipo": null,
+        "emoji": "🧪",
+        "titulo": "Teste de opções",
+        "texto": "Exemplo: enquete com 2 bairros."
+      },
+      {
+        "numero": 5,
+        "tipo": null,
+        "emoji": "🏡",
+        "titulo": "Bastidor de visita",
+        "texto": "Mostre 10s do imóvel e fale um diferencial."
+      },
+      {
+        "numero": 6,
+        "tipo": null,
+        "emoji": "📥",
+        "titulo": "Convite para DM",
+        "texto": "Exemplo: \"Quer a ficha completa? Me chama aqui.\""
+      },
+      {
+        "numero": 7,
+        "tipo": "Encerramento",
+        "emoji": "✅",
+        "titulo": "Roteiro simples",
+        "texto": "Sequência que funciona:",
+        "lista": [
+          "Pergunta",
+          "Bastidor",
+          "Convite para DM"
+        ],
+        "cta": "Salva esse post"
+      }
+    ],
+    "legenda": "📲 Stories não são vitrine, são conversa.\n\nUse perguntas e convites claros para gerar leads.\n\n#corretor #imóveis #marketing #stories"
+  },
+  {
+    "id": 6,
+    "category": "vendas",
+    "titulo": "Preparação para visita: checklist do corretor",
+    "gancho": "Uma visita mal preparada destrói a chance de fechar.",
+    "slides": [
+      {
+        "numero": 1,
+        "tipo": "Capa",
+        "emoji": "🧾",
+        "titulo": "Checklist da visita",
+        "texto": "Evite improviso no dia"
+      },
+      {
+        "numero": 2,
+        "tipo": "Introdução",
+        "emoji": "⏰",
+        "titulo": "O básico primeiro",
+        "texto": "Confirme horário e rota com 24h de antecedência."
+      },
+      {
+        "numero": 3,
+        "tipo": null,
+        "emoji": "🔑",
+        "titulo": "Acesso e chaves",
+        "texto": "Verifique chaves, portaria e autorização do proprietário."
+      },
+      {
+        "numero": 4,
+        "tipo": null,
+        "emoji": "📌",
+        "titulo": "Diferenciais prontos",
+        "texto": "Separe 3 pontos fortes do imóvel (ex: face norte, vaga fixa, reforma nova)."
+      },
+      {
+        "numero": 5,
+        "tipo": null,
+        "emoji": "📄",
+        "titulo": "Documentos básicos",
+        "texto": "Tenha ficha, valor de condomínio e IPTU em mãos."
+      },
+      {
+        "numero": 6,
+        "tipo": null,
+        "emoji": "🗺️",
+        "titulo": "Roteiro da visita",
+        "texto": "Comece pela área social, depois quartos e finalize na vista."
+      },
+      {
+        "numero": 7,
+        "tipo": "Encerramento",
+        "emoji": "✅",
+        "titulo": "Pronto para fechar",
+        "texto": "Se o cliente gostar, você deve ter:",
+        "lista": [
+          "Condições de pagamento",
+          "Limite de negociação",
+          "Próximo passo claro"
+        ],
+        "cta": "Salva esse post"
+      }
+    ],
+    "legenda": "🧾 Visita bem preparada aumenta chance de proposta.\n\nFaça o básico bem feito e evite surpresas.\n\n#corretor #imóveis #visita"
+  },
+  {
+    "id": 7,
+    "category": "vendas",
+    "titulo": "Objeções comuns e respostas diretas",
+    "gancho": "O cliente não está contra você, ele só precisa de clareza.",
+    "slides": [
+      {
+        "numero": 1,
+        "tipo": "Capa",
+        "emoji": "🛑",
+        "titulo": "Objeções na prática",
+        "texto": "Respostas curtas e objetivas"
+      },
+      {
+        "numero": 2,
+        "tipo": "Introdução",
+        "emoji": "🧠",
+        "titulo": "Regra",
+        "texto": "Ouça, valide e responda com dado."
+      },
+      {
+        "numero": 3,
+        "tipo": null,
+        "emoji": "💸",
+        "titulo": ""Está caro"",
+        "texto": "Resposta: \"Comparado a quais imóveis? Tenho 2 opções e valores de vendidos.\""
+      },
+      {
+        "numero": 4,
+        "tipo": null,
+        "emoji": "🧱",
+        "titulo": ""Precisa de reforma"",
+        "texto": "Resposta: \"Quanto você pretende investir? Posso buscar algo já pronto nesse orçamento.\""
+      },
+      {
+        "numero": 5,
+        "tipo": null,
+        "emoji": "📍",
+        "titulo": ""Bairro não é ideal"",
+        "texto": "Resposta: \"Quais 2 ruas são prioridade? Vou filtrar exatamente nelas.\""
+      },
+      {
+        "numero": 6,
+        "tipo": null,
+        "emoji": "⏳",
+        "titulo": ""Vou pensar"",
+        "texto": "Resposta: \"Perfeito. Quer que eu te ajude comparando com outras 2 opções?\""
+      },
+      {
+        "numero": 7,
+        "tipo": "Encerramento",
+        "emoji": "✅",
+        "titulo": "Resumo",
+        "texto": "Respostas boas têm:",
+        "lista": [
+          "Pergunta de clareza",
+          "Dado objetivo",
+          "Próximo passo"
+        ],
+        "cta": "Comenta aqui qual foi seu desafio"
+      }
+    ],
+    "legenda": "🛑 Objeção não é rejeição.\n\nSeja claro, use dados e conduza para o próximo passo.\n\n#corretor #imóveis #objeções"
+  },
+  {
+    "id": 8,
+    "category": "processos",
+    "titulo": "Agenda organizada em 15 minutos",
+    "gancho": "Sem agenda você vive apagando incêndio.",
+    "slides": [
+      {
+        "numero": 1,
+        "tipo": "Capa",
+        "emoji": "🗓️",
+        "titulo": "Organização de agenda",
+        "texto": "Método simples e rápido"
+      },
+      {
+        "numero": 2,
+        "tipo": "Introdução",
+        "emoji": "⏳",
+        "titulo": "15 minutos",
+        "texto": "Suficiente para planejar a semana sem estresse."
+      },
+      {
+        "numero": 3,
+        "tipo": null,
+        "emoji": "📌",
+        "titulo": "Blocos fixos",
+        "texto": "Exemplo: 9-10h prospecção, 14-16h visitas, 17h follow-up."
+      },
+      {
+        "numero": 4,
+        "tipo": null,
+        "emoji": "📞",
+        "titulo": "Dia de contato",
+        "texto": "Defina 2 dias só para ligações e mensagens."
+      },
+      {
+        "numero": 5,
+        "tipo": null,
+        "emoji": "📋",
+        "titulo": "Lista de prioridade",
+        "texto": "Separar leads quentes, mornos e frios evita bagunça."
+      },
+      {
+        "numero": 6,
+        "tipo": null,
+        "emoji": "⛔",
+        "titulo": "Corte urgências falsas",
+        "texto": "Se não é visita ou proposta, agende."
+      },
+      {
+        "numero": 7,
+        "tipo": "Encerramento",
+        "emoji": "✅",
+        "titulo": "Resumo rápido",
+        "texto": "Faça toda segunda:",
+        "lista": [
+          "Blocos fixos",
+          "Dias de contato",
+          "Prioridades"
+        ],
+        "cta": "Salva esse post"
+      }
+    ],
+    "legenda": "🗓️ Agenda organizada = mais visitas e menos correria.\n\nTeste esse método na próxima semana.\n\n#corretor #imóveis #processos"
+  },
+  {
+    "id": 9,
+    "category": "marketing",
+    "titulo": "Networking eficiente para corretores",
+    "gancho": "Networking não é sair entregando cartão.",
+    "slides": [
+      {
+        "numero": 1,
+        "tipo": "Capa",
+        "emoji": "🤝",
+        "titulo": "Networking eficiente",
+        "texto": "Relacionamentos que geram negócios"
+      },
+      {
+        "numero": 2,
+        "tipo": "Introdução",
+        "emoji": "🎯",
+        "titulo": "Foco em nicho",
+        "texto": "Escolha 2 profissionais que lidam com seu público."
+      },
+      {
+        "numero": 3,
+        "tipo": null,
+        "emoji": "👷",
+        "titulo": "Parcerias locais",
+        "texto": "Exemplo: arquiteto + você indica cliente após visita."
+      },
+      {
+        "numero": 4,
+        "tipo": null,
+        "emoji": "🏦",
+        "titulo": "Contato com bancos",
+        "texto": "Pergunte sobre taxas e leve informação ao cliente."
+      },
+      {
+        "numero": 5,
+        "tipo": null,
+        "emoji": "☕",
+        "titulo": "Encontros curtos",
+        "texto": "15 minutos é suficiente para trocar contatos úteis."
+      },
+      {
+        "numero": 6,
+        "tipo": null,
+        "emoji": "📣",
+        "titulo": "Post de parceria",
+        "texto": "Marque o parceiro e explique o benefício para o cliente."
+      },
+      {
+        "numero": 7,
+        "tipo": "Encerramento",
+        "emoji": "✅",
+        "titulo": "Checklist",
+        "texto": "Networking bom tem:",
+        "lista": [
+          "Nicho definido",
+          "Benefício claro",
+          "Contato recorrente"
+        ],
+        "cta": "Comenta aqui qual foi seu desafio"
+      }
+    ],
+    "legenda": "🤝 Networking eficiente é troca real.\n\nEscolha parceiros que falam com seu público.\n\n#corretor #imóveis #networking"
+  },
+  {
+    "id": 10,
+    "category": "marketing",
+    "titulo": "Corretor x Consultor: diferença que vende",
+    "gancho": "O cliente percebe quando você só quer empurrar um imóvel.",
+    "slides": [
+      {
+        "numero": 1,
+        "tipo": "Capa",
+        "emoji": "🧭",
+        "titulo": "Corretor ou consultor?",
+        "texto": "A diferença que muda sua percepção"
+      },
+      {
+        "numero": 2,
+        "tipo": "Introdução",
+        "emoji": "👂",
+        "titulo": "Consultor escuta",
+        "texto": "Ele começa entendendo objetivo e prazo."
+      },
+      {
+        "numero": 3,
+        "tipo": null,
+        "emoji": "📊",
+        "titulo": "Consultor usa dados",
+        "texto": "Exemplo: mostra valores de vendidos do bairro."
+      },
+      {
+        "numero": 4,
+        "tipo": null,
+        "emoji": "🧩",
+        "titulo": "Consultor filtra",
+        "texto": "Apresenta 2 opções certas, não 10 aleatórias."
+      },
+      {
+        "numero": 5,
+        "tipo": null,
+        "emoji": "🗣️",
+        "titulo": "Consultor orienta",
+        "texto": "Explica riscos e vantagens com transparência."
+      },
+      {
+        "numero": 6,
+        "tipo": null,
+        "emoji": "✅",
+        "titulo": "Resultado",
+        "texto": "Confiança gera indicação e fechamento."
+      },
+      {
+        "numero": 7,
+        "tipo": "Encerramento",
+        "emoji": "💡",
+        "titulo": "Como aplicar",
+        "texto": "Na próxima conversa:",
+        "lista": [
+          "Faça 3 perguntas",
+          "Traga dados",
+          "Mostre 2 opções"
+        ],
+        "cta": "Salva esse post"
+      }
+    ],
+    "legenda": "🧭 Ser consultor é orientar, não empurrar.\n\nPequenas atitudes mudam sua percepção no cliente.\n\n#corretor #imóveis #consultoria"
+  },
+  {
+    "id": 11,
+    "category": "marketing",
+    "titulo": "Autoridade local em 30 dias",
+    "gancho": "Você é lembrado no bairro? Se não, está invisível.",
+    "slides": [
+      {
+        "numero": 1,
+        "tipo": "Capa",
+        "emoji": "📍",
+        "titulo": "Autoridade local",
+        "texto": "Plano simples para ser referência"
+      },
+      {
+        "numero": 2,
+        "tipo": "Introdução",
+        "emoji": "🗺️",
+        "titulo": "Escolha um microbairro",
+        "texto": "Foque em uma região específica para ficar conhecido."
+      },
+      {
+        "numero": 3,
+        "tipo": null,
+        "emoji": "📹",
+        "titulo": "Conteúdo de rua",
+        "texto": "Exemplo: vídeo curto mostrando comércio e acesso ao metrô."
+      },
+      {
+        "numero": 4,
+        "tipo": null,
+        "emoji": "📈",
+        "titulo": "Dados locais",
+        "texto": "Exemplo: \"Preço médio do m² subiu 8% em 6 meses\"."
+      },
+      {
+        "numero": 5,
+        "tipo": null,
+        "emoji": "🤝",
+        "titulo": "Parcerias da região",
+        "texto": "Padarias, academias e escolas para crosspost."
+      },
+      {
+        "numero": 6,
+        "tipo": null,
+        "emoji": "🧾",
+        "titulo": "Captação inteligente",
+        "texto": "Mostre exemplos de vendidos no bairro ao proprietário."
+      },
+      {
+        "numero": 7,
+        "tipo": "Encerramento",
+        "emoji": "✅",
+        "titulo": "Plano 30 dias",
+        "texto": "Repita semanalmente:",
+        "lista": [
+          "1 vídeo local",
+          "1 dado do bairro",
+          "1 parceria"
+        ],
+        "cta": "Comenta aqui qual foi seu desafio"
+      }
+    ],
+    "legenda": "📍 Autoridade local se constrói com constância.\n\nEscolha um microbairro e repita as ações.\n\n#corretor #imóveis #marketinglocal"
+  },
+  {
+    "id": 12,
+    "category": "vendas",
+    "titulo": "Gestão de expectativas do cliente",
+    "gancho": "A frustração começa quando a promessa é vaga.",
+    "slides": [
+      {
+        "numero": 1,
+        "tipo": "Capa",
+        "emoji": "🎯",
+        "titulo": "Expectativas alinhadas",
+        "texto": "Evite desgaste durante a negociação"
+      },
+      {
+        "numero": 2,
+        "tipo": "Introdução",
+        "emoji": "🧠",
+        "titulo": "O problema",
+        "texto": "Cliente espera preço X, prazo Y e entrega Z."
+      },
+      {
+        "numero": 3,
+        "tipo": null,
+        "emoji": "📌",
+        "titulo": "Combine o prazo",
+        "texto": "Exemplo: \"Com esse perfil, normalmente leva 45 dias para achar a melhor opção.\""
+      },
+      {
+        "numero": 4,
+        "tipo": null,
+        "emoji": "💬",
+        "titulo": "Explique o mercado",
+        "texto": "Exemplo: \"Esse bairro tem pouca oferta, então a negociação é mais curta.\""
+      },
+      {
+        "numero": 5,
+        "tipo": null,
+        "emoji": "📊",
+        "titulo": "Mostre limites reais",
+        "texto": "Exemplo: \"Até 600 mil, temos 3 opções com suíte.\""
+      },
+      {
+        "numero": 6,
+        "tipo": null,
+        "emoji": "📝",
+        "titulo": "Formalize resumo",
+        "texto": "Envie um resumo do combinado por WhatsApp."
+      },
+      {
+        "numero": 7,
+        "tipo": "Encerramento",
+        "emoji": "✅",
+        "titulo": "Checklist",
+        "texto": "Antes de visitar:",
+        "lista": [
+          "Prazo definido",
+          "Limites de preço",
+          "Expectativa documentada"
+        ],
+        "cta": "Salva esse post"
+      }
+    ],
+    "legenda": "🎯 Expectativa alinhada evita atrito.\n\nExplique o cenário e formalize o combinado.\n\n#corretor #imóveis #negociação"
+  },
+  {
+    "id": 13,
+    "category": "vendas",
+    "titulo": "Erros em apresentação de proposta",
+    "gancho": "Uma boa proposta pode morrer por má apresentação.",
+    "slides": [
+      {
+        "numero": 1,
+        "tipo": "Capa",
+        "emoji": "📑",
+        "titulo": "Apresentação de proposta",
+        "texto": "Erros que custam fechamento"
+      },
+      {
+        "numero": 2,
+        "tipo": "Introdução",
+        "emoji": "⚠️",
+        "titulo": "Cuidado",
+        "texto": "Quem controla a proposta, controla a negociação."
+      },
+      {
+        "numero": 3,
+        "tipo": null,
+        "emoji": "🧾",
+        "titulo": "Sem resumo claro",
+        "texto": "Exemplo: não detalhar valor, prazo e sinal em 3 linhas."
+      },
+      {
+        "numero": 4,
+        "tipo": null,
+        "emoji": "📉",
+        "titulo": "Sem comparativo",
+        "texto": "Exemplo: mostrar 2 vendas similares para justificar a oferta."
+      },
+      {
+        "numero": 5,
+        "tipo": null,
+        "emoji": "🤝",
+        "titulo": "Sem próximo passo",
+        "texto": "Exemplo: indicar prazo de resposta e data da contraproposta."
+      },
+      {
+        "numero": 6,
+        "tipo": null,
+        "emoji": "📞",
+        "titulo": "Mensagem fria",
+        "texto": "Exemplo: enviar PDF sem ligação para explicar."
+      },
+      {
+        "numero": 7,
+        "tipo": "Encerramento",
+        "emoji": "✅",
+        "titulo": "Como apresentar",
+        "texto": "Inclua sempre:",
+        "lista": [
+          "Resumo objetivo",
+          "Comparativos",
+          "Prazo de resposta"
+        ],
+        "cta": "Comenta aqui qual foi seu desafio"
+      }
+    ],
+    "legenda": "📑 Proposta bem apresentada aumenta chance de aceite.\n\nExplique pessoalmente e leve dados.\n\n#corretor #imóveis #proposta"
+  },
+  {
+    "id": 14,
+    "category": "vendas",
+    "titulo": "Como qualificar leads em 5 perguntas",
+    "gancho": "Sem qualificar, você perde tempo com lead frio.",
+    "slides": [
+      {
+        "numero": 1,
+        "tipo": "Capa",
+        "emoji": "🎯",
+        "titulo": "Qualificação de leads",
+        "texto": "5 perguntas que filtram rápido"
+      },
+      {
+        "numero": 2,
+        "tipo": "Introdução",
+        "emoji": "⏱️",
+        "titulo": "Ganhe tempo",
+        "texto": "Menos visitas erradas, mais propostas."
+      },
+      {
+        "numero": 3,
+        "tipo": null,
+        "emoji": "💰",
+        "titulo": "1) Faixa de investimento",
+        "texto": "Exemplo: \"Qual valor máximo confortável?\""
+      },
+      {
+        "numero": 4,
+        "tipo": null,
+        "emoji": "📍",
+        "titulo": "2) Região prioritária",
+        "texto": "Exemplo: \"Quais 2 bairros são essenciais?\""
+      },
+      {
+        "numero": 5,
+        "tipo": null,
+        "emoji": "📅",
+        "titulo": "3) Prazo de mudança",
+        "texto": "Exemplo: \"Você precisa mudar em até 3 meses?\""
+      },
+      {
+        "numero": 6,
+        "tipo": null,
+        "emoji": "🏡",
+        "titulo": "4) Prioridade do imóvel",
+        "texto": "Exemplo: \"Qual 1 item é inegociável?\""
+      },
+      {
+        "numero": 7,
+        "tipo": "Encerramento",
+        "emoji": "✅",
+        "titulo": "Feche com ação",
+        "texto": "Após qualificar:",
+        "lista": [
+          "Enviar 2 opções",
+          "Agendar visita",
+          "Definir próximo contato"
+        ],
+        "cta": "Salva esse post"
+      }
+    ],
+    "legenda": "🎯 Qualificar é economizar energia.\n\nFaça as 5 perguntas antes de marcar visita.\n\n#corretor #imóveis #leads"
+  },
+  {
+    "id": 15,
+    "category": "vendas",
+    "titulo": "Postura em visitas: o que fazer e evitar",
+    "gancho": "Sua postura pode vender mais que o imóvel.",
+    "slides": [
+      {
+        "numero": 1,
+        "tipo": "Capa",
+        "emoji": "👔",
+        "titulo": "Postura na visita",
+        "texto": "Detalhes que passam confiança"
+      },
+      {
+        "numero": 2,
+        "tipo": "Introdução",
+        "emoji": "🧭",
+        "titulo": "Você é o guia",
+        "texto": "Mostre o imóvel e conduza o ritmo da visita."
+      },
+      {
+        "numero": 3,
+        "tipo": null,
+        "emoji": "👀",
+        "titulo": "Observe antes de falar",
+        "texto": "Exemplo: note o que o cliente olha primeiro e comente."
+      },
+      {
+        "numero": 4,
+        "tipo": null,
+        "emoji": "🗣️",
+        "titulo": "Fale de benefício",
+        "texto": "Exemplo: \"Aqui bate sol da manhã, economia de energia.\""
+      },
+      {
+        "numero": 5,
+        "tipo": null,
+        "emoji": "🚫",
+        "titulo": "Evite pressão",
+        "texto": "Exemplo: não diga \"tem outra pessoa interessada\" sem fato real."
+      },
+      {
+        "numero": 6,
+        "tipo": null,
+        "emoji": "🧹",
+        "titulo": "Ambiente pronto",
+        "texto": "Avise o proprietário sobre limpeza e iluminação."
+      },
+      {
+        "numero": 7,
+        "tipo": "Encerramento",
+        "emoji": "✅",
+        "titulo": "Resumo",
+        "texto": "Postura ideal:",
+        "lista": [
+          "Calma e controle",
+          "Benefício claro",
+          "Sem pressão falsa"
+        ],
+        "cta": "Comenta aqui qual foi seu desafio"
+      }
+    ],
+    "legenda": "👔 Postura é parte da venda.\n\nConduza a visita com calma e benefício real.\n\n#corretor #imóveis #visita"
+  },
+  {
+    "id": 16,
+    "category": "processos",
+    "titulo": "WhatsApp profissional sem perder o cliente",
+    "gancho": "WhatsApp mal usado vira ruído e cansa o lead.",
+    "slides": [
+      {
+        "numero": 1,
+        "tipo": "Capa",
+        "emoji": "💬",
+        "titulo": "WhatsApp profissional",
+        "texto": "Organização que gera resposta"
+      },
+      {
+        "numero": 2,
+        "tipo": "Introdução",
+        "emoji": "📵",
+        "titulo": "Evite excesso",
+        "texto": "Uma mensagem bem feita vale mais que cinco soltas."
+      },
+      {
+        "numero": 3,
+        "tipo": null,
+        "emoji": "📌",
+        "titulo": "Use etiquetas",
+        "texto": "Exemplo: Quente, Morno, Frio, Visita marcada."
+      },
+      {
+        "numero": 4,
+        "tipo": null,
+        "emoji": "🧩",
+        "titulo": "Texto curto",
+        "texto": "Exemplo: 2 linhas + 1 pergunta clara."
+      },
+      {
+        "numero": 5,
+        "tipo": null,
+        "emoji": "📅",
+        "titulo": "Horário comercial",
+        "texto": "Exemplo: evite enviar mensagens após 20h."
+      },
+      {
+        "numero": 6,
+        "tipo": null,
+        "emoji": "📎",
+        "titulo": "Anexo certo",
+        "texto": "Envie 1 ficha e 3 fotos principais, não 20."
+      },
+      {
+        "numero": 7,
+        "tipo": "Encerramento",
+        "emoji": "✅",
+        "titulo": "Padrão simples",
+        "texto": "Antes de enviar:",
+        "lista": [
+          "Objetivo claro",
+          "Pergunta final",
+          "Anexo enxuto"
+        ],
+        "cta": "Salva esse post"
+      }
+    ],
+    "legenda": "💬 WhatsApp profissional é respeito ao tempo do cliente.\n\nMenos mensagens, mais clareza.\n\n#corretor #imóveis #whatsapp"
+  },
+  {
+    "id": 17,
+    "category": "mindset",
+    "titulo": "Como lidar com rejeição sem perder ritmo",
+    "gancho": "Rejeição faz parte, parar não.",
+    "slides": [
+      {
+        "numero": 1,
+        "tipo": "Capa",
+        "emoji": "💔",
+        "titulo": "Rejeição no mercado",
+        "texto": "Como seguir sem travar"
+      },
+      {
+        "numero": 2,
+        "tipo": "Introdução",
+        "emoji": "🧠",
+        "titulo": "Não é pessoal",
+        "texto": "Rejeição é sobre timing, orçamento ou prioridade."
+      },
+      {
+        "numero": 3,
+        "tipo": null,
+        "emoji": "📊",
+        "titulo": "Registre os motivos",
+        "texto": "Exemplo: preço, localização, tamanho. Isso mostra padrão."
+      },
+      {
+        "numero": 4,
+        "tipo": null,
+        "emoji": "🔁",
+        "titulo": "Volte ao processo",
+        "texto": "Faça mais 3 contatos no mesmo dia para manter ritmo."
+      },
+      {
+        "numero": 5,
+        "tipo": null,
+        "emoji": "🎯",
+        "titulo": "Meta diária pequena",
+        "texto": "Exemplo: 2 ligações + 1 visita."
+      },
+      {
+        "numero": 6,
+        "tipo": null,
+        "emoji": "🧩",
+        "titulo": "Aprenda com o não",
+        "texto": "Ajuste a oferta com base no feedback."
+      },
+      {
+        "numero": 7,
+        "tipo": "Encerramento",
+        "emoji": "✅",
+        "titulo": "Resumo",
+        "texto": "Para não travar:",
+        "lista": [
+          "Registre padrões",
+          "Siga o processo",
+          "Mantenha meta diária"
+        ],
+        "cta": "Comenta aqui qual foi seu desafio"
+      }
+    ],
+    "legenda": "💔 Rejeição acontece com todo corretor.\n\nTransforme o não em ajuste e siga o processo.\n\n#corretor #imóveis #mindset"
+  },
+  {
+    "id": 18,
+    "category": "processos",
+    "titulo": "Criação de portfólio de imóveis eficiente",
+    "gancho": "Portfólio bagunçado faz o cliente perder confiança.",
+    "slides": [
+      {
+        "numero": 1,
+        "tipo": "Capa",
+        "emoji": "📂",
+        "titulo": "Portfólio inteligente",
+        "texto": "Organize imóveis para vender mais"
+      },
+      {
+        "numero": 2,
+        "tipo": "Introdução",
+        "emoji": "🧭",
+        "titulo": "Menos é mais",
+        "texto": "Um portfólio curto e relevante vale mais que uma lista enorme."
+      },
+      {
+        "numero": 3,
+        "tipo": null,
+        "emoji": "🏠",
+        "titulo": "Separe por perfil",
+        "texto": "Exemplo: família com filhos, investidor, primeira compra."
+      },
+      {
+        "numero": 4,
+        "tipo": null,
+        "emoji": "📸",
+        "titulo": "Padronize a apresentação",
+        "texto": "Mesma ordem: fotos, metragem, valor, condomínio."
+      },
+      {
+        "numero": 5,
+        "tipo": null,
+        "emoji": "🧾",
+        "titulo": "Atualize semanalmente",
+        "texto": "Imóvel vendido ou indisponível deve sair."
+      },
+      {
+        "numero": 6,
+        "tipo": null,
+        "emoji": "🔎",
+        "titulo": "Destaque diferenciais",
+        "texto": "Exemplo: \"andar alto + vista livre\" no topo."
+      },
+      {
+        "numero": 7,
+        "tipo": "Encerramento",
+        "emoji": "✅",
+        "titulo": "Checklist",
+        "texto": "Portfólio bom tem:",
+        "lista": [
+          "Segmentação",
+          "Padronização",
+          "Atualização frequente"
+        ],
+        "cta": "Salva esse post"
+      }
+    ],
+    "legenda": "📂 Portfólio organizado transmite profissionalismo.\n\nMostre menos imóveis, porém certeiros.\n\n#corretor #imóveis #processos"
+  },
+  {
+    "id": 19,
+    "category": "vendas",
+    "titulo": "Técnicas simples de negociação",
+    "gancho": "Negociar não é dar desconto, é criar valor.",
+    "slides": [
+      {
+        "numero": 1,
+        "tipo": "Capa",
+        "emoji": "🤝",
+        "titulo": "Negociação na prática",
+        "texto": "3 técnicas que funcionam"
+      },
+      {
+        "numero": 2,
+        "tipo": "Introdução",
+        "emoji": "🧠",
+        "titulo": "Mentalidade",
+        "texto": "Você negocia com dados, não com opinião."
+      },
+      {
+        "numero": 3,
+        "tipo": null,
+        "emoji": "📊",
+        "titulo": "Âncora de valor",
+        "texto": "Exemplo: mostrar 2 imóveis mais caros para destacar custo-benefício."
+      },
+      {
+        "numero": 4,
+        "tipo": null,
+        "emoji": "⏳",
+        "titulo": "Concessão planejada",
+        "texto": "Exemplo: desconto só se fechar até data X."
+      },
+      {
+        "numero": 5,
+        "tipo": null,
+        "emoji": "🎯",
+        "titulo": "Troca inteligente",
+        "texto": "Exemplo: reduzir preço em troca de pagamento à vista."
+      },
+      {
+        "numero": 6,
+        "tipo": null,
+        "emoji": "🧾",
+        "titulo": "Formalize tudo",
+        "texto": "Envie resumo da negociação por escrito."
+      },
+      {
+        "numero": 7,
+        "tipo": "Encerramento",
+        "emoji": "✅",
+        "titulo": "Resumo",
+        "texto": "Negociação boa tem:",
+        "lista": [
+          "Dados claros",
+          "Concessões condicionadas",
+          "Resumo escrito"
+        ],
+        "cta": "Comenta aqui qual foi seu desafio"
+      }
+    ],
+    "legenda": "🤝 Negociação é construir valor com dados.\n\nUse âncora, concessão e resumo final.\n\n#corretor #imóveis #negociação"
+  },
+  {
+    "id": 20,
+    "category": "vendas",
+    "titulo": "Como trabalhar indicações sem parecer oportunista",
+    "gancho": "Indicação é ouro, mas precisa de timing.",
+    "slides": [
+      {
+        "numero": 1,
+        "tipo": "Capa",
+        "emoji": "⭐",
+        "titulo": "Indicações na prática",
+        "texto": "Como pedir sem desconforto"
+      },
+      {
+        "numero": 2,
+        "tipo": "Introdução",
+        "emoji": "🤝",
+        "titulo": "Momento ideal",
+        "texto": "Peça após uma entrega real: visita ou proposta."
+      },
+      {
+        "numero": 3,
+        "tipo": null,
+        "emoji": "💬",
+        "titulo": "Script simples",
+        "texto": "Exemplo: \"Se conhecer alguém buscando imóvel, posso ajudar da mesma forma.\""
+      },
+      {
+        "numero": 4,
+        "tipo": null,
+        "emoji": "🎁",
+        "titulo": "Ofereça valor",
+        "texto": "Exemplo: enviar um comparativo de preços para o indicado."
+      },
+      {
+        "numero": 5,
+        "tipo": null,
+        "emoji": "📲",
+        "titulo": "Facilite o repasse",
+        "texto": "Exemplo: mande uma mensagem pronta para o cliente encaminhar."
+      },
+      {
+        "numero": 6,
+        "tipo": null,
+        "emoji": "📌",
+        "titulo": "Agradeça sempre",
+        "texto": "Um obrigado imediato mantém o relacionamento."
+      },
+      {
+        "numero": 7,
+        "tipo": "Encerramento",
+        "emoji": "✅",
+        "titulo": "Checklist",
+        "texto": "Para pedir indicação:",
+        "lista": [
+          "Escolha o timing",
+          "Use script curto",
+          "Facilite o envio"
+        ],
+        "cta": "Salva esse post"
+      }
+    ],
+    "legenda": "⭐ Indicação funciona quando você facilita para o cliente.\n\nPeça no timing certo e ofereça valor.\n\n#corretor #imóveis #indicacao"
+  }
+]
