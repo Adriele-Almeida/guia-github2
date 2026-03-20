@@ -1,718 +1,1235 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Guia: Do Codigo ao GitHub</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Instagram para Negócios 2026</title>
+  <meta
+    name="description"
+    content="Landing page interativa para o serviço Instagram para Negócios 2026, com estratégia, setup, design editorial e acompanhamento especializado."
+  />
+  <style>
+    :root {
+      --bg: #0f1021;
+      --bg-soft: #17182f;
+      --panel: rgba(255, 255, 255, 0.08);
+      --panel-strong: rgba(255, 255, 255, 0.14);
+      --text: #f5f7ff;
+      --muted: #c6c8da;
+      --primary: #ff4fd8;
+      --primary-strong: #ff2db9;
+      --secondary: #7b61ff;
+      --accent: #4ef2c2;
+      --warning: #ffd166;
+      --shadow: 0 24px 60px rgba(0, 0, 0, 0.35);
+      --radius-xl: 28px;
+      --radius-lg: 20px;
+      --radius-md: 14px;
+      --max-width: 1180px;
+    }
 
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            min-height: 100vh;
-            padding: 20px;
-        }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
-        .container {
-            max-width: 900px;
-            margin: 0 auto;
-        }
+    html {
+      scroll-behavior: smooth;
+    }
 
-        .header {
-            text-align: center;
-            color: white;
-            margin-bottom: 40px;
-            animation: fadeIn 0.8s ease-out;
-        }
+    body {
+      font-family: Inter, "Segoe UI", Roboto, sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at top left, rgba(255, 79, 216, 0.24), transparent 28%),
+        radial-gradient(circle at top right, rgba(78, 242, 194, 0.12), transparent 22%),
+        linear-gradient(145deg, #0a0b16 0%, #0f1021 48%, #141632 100%);
+      min-height: 100vh;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
 
-        .header h1 {
-            font-size: 2.5em;
-            margin-bottom: 10px;
-        }
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(255,255,255,0.035) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.035) 1px, transparent 1px);
+      background-size: 34px 34px;
+      mask-image: linear-gradient(to bottom, rgba(0,0,0,0.48), transparent 95%);
+      pointer-events: none;
+      z-index: 0;
+    }
 
-        .header p {
-            font-size: 1.2em;
-            opacity: 0.9;
-        }
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
 
-        .section {
-            background: white;
-            border-radius: 15px;
-            margin-bottom: 20px;
-            overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-            animation: slideUp 0.5s ease-out;
-        }
+    .page {
+      position: relative;
+      z-index: 1;
+    }
 
-        .section-header {
-            padding: 25px;
-            cursor: pointer;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            background: linear-gradient(to right, #f8f9fa, #e9ecef);
-            transition: all 0.3s;
-        }
+    .container {
+      width: min(calc(100% - 32px), var(--max-width));
+      margin: 0 auto;
+    }
 
-        .section-header:hover {
-            background: linear-gradient(to right, #e9ecef, #dee2e6);
-        }
+    .nav {
+      position: sticky;
+      top: 14px;
+      z-index: 30;
+      padding-top: 16px;
+    }
 
-        .section-header-left {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            flex: 1;
-        }
+    .nav-shell {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      padding: 14px 18px;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      background: rgba(10, 11, 22, 0.72);
+      backdrop-filter: blur(18px);
+      border-radius: 999px;
+      box-shadow: 0 18px 45px rgba(0, 0, 0, 0.26);
+    }
 
-        .icon {
-            width: 50px;
-            height: 50px;
-            background: linear-gradient(135deg, #667eea, #764ba2);
-            border-radius: 10px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 24px;
-            transition: all 0.3s;
-        }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+    }
 
-        .icon.completed {
-            background: linear-gradient(135deg, #10b981, #059669);
-        }
+    .brand-mark {
+      width: 44px;
+      height: 44px;
+      border-radius: 14px;
+      display: grid;
+      place-items: center;
+      font-size: 1.2rem;
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      box-shadow: 0 10px 25px rgba(255, 79, 216, 0.32);
+    }
 
-        .section-title {
-            font-size: 1.3em;
-            font-weight: bold;
-            color: #333;
-        }
+    .nav-links {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+      justify-content: center;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
 
-        .section-actions {
-            display: flex;
-            gap: 10px;
-            align-items: center;
-        }
+    .nav-links a:hover,
+    .nav-links a.active {
+      color: var(--text);
+    }
 
-        .btn {
-            padding: 10px 20px;
-            border: none;
-            border-radius: 8px;
-            cursor: pointer;
-            font-weight: bold;
-            transition: all 0.3s;
-        }
+    .nav-cta {
+      padding: 12px 18px;
+      border-radius: 999px;
+      background: linear-gradient(135deg, var(--primary), var(--primary-strong));
+      font-weight: 700;
+      box-shadow: 0 12px 28px rgba(255, 79, 216, 0.34);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
 
-        .btn-complete {
-            background: #e5e7eb;
-            color: #374151;
-        }
+    .nav-cta:hover,
+    .button:hover,
+    .chip-button:hover,
+    .phase-button:hover,
+    .faq-item summary:hover,
+    .feature-card:hover,
+    .timeline-card:hover,
+    .training-card:hover,
+    .support-card:hover,
+    .investment-card:hover {
+      transform: translateY(-2px);
+    }
 
-        .btn-complete:hover {
-            background: #d1d5db;
-        }
+    .hero {
+      padding: 48px 0 28px;
+    }
 
-        .btn-complete.completed {
-            background: #10b981;
-            color: white;
-        }
+    .hero-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.15fr) minmax(320px, 0.85fr);
+      gap: 30px;
+      align-items: stretch;
+    }
 
-        .arrow {
-            font-size: 24px;
-            color: #666;
-            transition: transform 0.3s;
-        }
+    .hero-copy,
+    .hero-panel,
+    .content-panel,
+    .feature-card,
+    .timeline-card,
+    .training-card,
+    .support-card,
+    .faq-item,
+    .investment-card,
+    .bonus-card {
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      background: var(--panel);
+      backdrop-filter: blur(12px);
+      border-radius: var(--radius-xl);
+      box-shadow: var(--shadow);
+    }
 
-        .arrow.rotated {
-            transform: rotate(180deg);
-        }
+    .hero-copy {
+      padding: 34px;
+      position: relative;
+      overflow: hidden;
+    }
 
-        .section-content {
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.3s ease-out;
-        }
+    .hero-copy::after {
+      content: "";
+      position: absolute;
+      right: -80px;
+      top: -80px;
+      width: 220px;
+      height: 220px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(255,79,216,0.24), transparent 70%);
+      pointer-events: none;
+    }
 
-        .section-content.show {
-            max-height: 3000px;
-            padding: 30px;
-            border-top: 2px solid #e5e7eb;
-        }
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 10px 14px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.08);
+      color: var(--accent);
+      font-size: 0.92rem;
+      margin-bottom: 18px;
+    }
 
-        .alert {
-            padding: 20px;
-            border-radius: 10px;
-            margin-bottom: 20px;
-            border-left: 4px solid;
-        }
+    h1 {
+      font-size: clamp(2.4rem, 6vw, 4.8rem);
+      line-height: 1.02;
+      letter-spacing: -0.04em;
+      margin-bottom: 16px;
+      max-width: 12ch;
+    }
 
-        .alert-blue {
-            background: #dbeafe;
-            border-color: #3b82f6;
-            color: #1e40af;
-        }
+    .hero-copy p.lead {
+      font-size: 1.08rem;
+      color: var(--muted);
+      max-width: 60ch;
+      margin-bottom: 24px;
+    }
 
-        .alert-purple {
-            background: #f3e8ff;
-            border-color: #a855f7;
-            color: #6b21a8;
-        }
+    .hero-badges,
+    .quick-stats,
+    .filter-bar,
+    .investment-toggle,
+    .timeline-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
 
-        .alert-green {
-            background: #d1fae5;
-            border-color: #10b981;
-            color: #065f46;
-        }
+    .hero-badges span,
+    .quick-stats .stat,
+    .timeline-meta span,
+    .mini-chip {
+      border-radius: 999px;
+      padding: 10px 14px;
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      color: var(--text);
+      font-size: 0.95rem;
+    }
 
-        .alert-yellow {
-            background: #fef3c7;
-            border-color: #f59e0b;
-            color: #92400e;
-        }
+    .hero-actions {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+      margin: 28px 0 22px;
+    }
 
-        .alert-red {
-            background: #fee2e2;
-            border-color: #ef4444;
-            color: #991b1b;
-        }
+    .button,
+    .chip-button,
+    .phase-button {
+      border: 0;
+      cursor: pointer;
+      transition: transform 0.2s ease, background 0.2s ease, box-shadow 0.2s ease;
+      font: inherit;
+    }
 
-        .alert-teal {
-            background: #ccfbf1;
-            border-color: #14b8a6;
-            color: #115e59;
-        }
+    .button {
+      padding: 15px 22px;
+      border-radius: 16px;
+      font-weight: 800;
+    }
 
-        .code-container {
-            background: #f3f4f6;
-            padding: 20px;
-            border-radius: 10px;
-            margin: 20px 0;
-        }
+    .button-primary {
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      color: white;
+      box-shadow: 0 16px 34px rgba(123, 97, 255, 0.28);
+    }
 
-        .code-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 15px;
-        }
+    .button-secondary {
+      color: var(--text);
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
 
-        .code-buttons {
-            display: flex;
-            gap: 10px;
-        }
+    .quick-stats {
+      margin-top: 26px;
+    }
 
-        .btn-code {
-            padding: 8px 16px;
-            border: none;
-            border-radius: 6px;
-            cursor: pointer;
-            font-size: 14px;
-            font-weight: bold;
-            transition: all 0.3s;
-        }
+    .quick-stats .stat {
+      display: flex;
+      flex-direction: column;
+      min-width: 140px;
+    }
 
-        .btn-show {
-            background: #6b7280;
-            color: white;
-        }
+    .quick-stats strong {
+      font-size: 1.3rem;
+      color: white;
+    }
 
-        .btn-show:hover {
-            background: #4b5563;
-        }
+    .hero-panel {
+      padding: 28px;
+      display: grid;
+      gap: 20px;
+      align-content: start;
+    }
 
-        .btn-copy {
-            background: #10b981;
-            color: white;
-        }
+    .panel-title {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 20px;
+    }
 
-        .btn-copy:hover {
-            background: #059669;
-        }
+    .panel-title h2,
+    .section-heading h2 {
+      font-size: clamp(1.7rem, 4vw, 2.6rem);
+      letter-spacing: -0.03em;
+      margin-bottom: 10px;
+    }
 
-        .code-block {
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.3s ease-out;
-            background: #1f2937;
-            color: #10b981;
-            padding: 0;
-            border-radius: 8px;
-            font-family: 'Courier New', monospace;
-            font-size: 14px;
-            line-height: 1.6;
-        }
+    .panel-title p,
+    .section-heading p,
+    .timeline-card p,
+    .training-card p,
+    .support-card p,
+    .bonus-card p,
+    .investment-note,
+    .faq-answer,
+    .feature-card p {
+      color: var(--muted);
+    }
 
-        .code-block.show {
-            max-height: 2000px;
-            padding: 20px;
-            overflow-x: auto;
-        }
+    .countdown {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 12px;
+    }
 
-        .final-banner {
-            background: linear-gradient(135deg, #8b5cf6, #ec4899);
-            color: white;
-            padding: 40px;
-            border-radius: 15px;
-            text-align: center;
-            margin-top: 40px;
-            animation: fadeIn 1s ease-out;
-        }
+    .countdown-card {
+      padding: 16px;
+      text-align: center;
+      background: rgba(255, 255, 255, 0.08);
+      border-radius: 18px;
+    }
 
-        .final-banner h3 {
-            font-size: 2em;
-            margin-bottom: 15px;
-        }
+    .countdown-card strong {
+      display: block;
+      font-size: clamp(1.8rem, 5vw, 2.4rem);
+      line-height: 1;
+      margin-bottom: 6px;
+      color: white;
+    }
 
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
+    .vacancy-note {
+      padding: 18px 20px;
+      border-radius: 18px;
+      background: linear-gradient(135deg, rgba(255, 209, 102, 0.18), rgba(255, 79, 216, 0.12));
+      border: 1px solid rgba(255, 209, 102, 0.18);
+    }
 
-        @keyframes slideUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
+    section {
+      padding: 34px 0;
+    }
 
-        ol, ul {
-            margin-left: 20px;
-            line-height: 1.8;
-        }
+    .section-heading {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      margin-bottom: 24px;
+      align-items: end;
+    }
 
-        li {
-            margin-bottom: 10px;
-        }
+    .section-tag {
+      color: var(--accent);
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      font-size: 0.85rem;
+      margin-bottom: 10px;
+      display: block;
+    }
 
-        strong {
-            color: #1f2937;
-        }
+    .phase-intro {
+      display: grid;
+      gap: 18px;
+    }
 
-        a {
-            color: #3b82f6;
-            text-decoration: none;
-            font-weight: bold;
-        }
+    .content-panel {
+      padding: 30px;
+    }
 
-        a:hover {
-            text-decoration: underline;
-        }
-    </style>
+    .filter-bar {
+      margin-bottom: 20px;
+    }
+
+    .chip-button,
+    .phase-button {
+      padding: 11px 16px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.08);
+      color: var(--text);
+      border: 1px solid transparent;
+      font-weight: 700;
+    }
+
+    .chip-button.active,
+    .phase-button.active {
+      background: linear-gradient(135deg, rgba(255,79,216,0.22), rgba(123,97,255,0.22));
+      border-color: rgba(255, 255, 255, 0.12);
+      box-shadow: 0 10px 28px rgba(123, 97, 255, 0.18);
+    }
+
+    .phase-grid,
+    .features-grid,
+    .training-grid,
+    .support-grid,
+    .investment-grid {
+      display: grid;
+      gap: 18px;
+    }
+
+    .phase-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .timeline-card {
+      padding: 24px;
+      position: relative;
+      overflow: hidden;
+      display: grid;
+      gap: 14px;
+    }
+
+    .timeline-card::before {
+      content: attr(data-phase);
+      position: absolute;
+      top: 18px;
+      right: 18px;
+      font-size: 0.9rem;
+      color: rgba(255, 255, 255, 0.32);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .timeline-card .phase-index {
+      width: 56px;
+      height: 56px;
+      display: grid;
+      place-items: center;
+      border-radius: 18px;
+      background: linear-gradient(135deg, rgba(255,79,216,0.25), rgba(123,97,255,0.25));
+      font-weight: 900;
+      font-size: 1.2rem;
+      color: white;
+    }
+
+    .timeline-card h3,
+    .feature-card h3,
+    .training-card h3,
+    .support-card h3,
+    .investment-card h3,
+    .bonus-card h3 {
+      font-size: 1.2rem;
+      letter-spacing: -0.02em;
+    }
+
+    .timeline-card ul,
+    .feature-card ul,
+    .training-card ul,
+    .support-card ul,
+    .investment-card ul {
+      list-style: none;
+      display: grid;
+      gap: 10px;
+    }
+
+    .timeline-card li,
+    .feature-card li,
+    .training-card li,
+    .support-card li,
+    .investment-card li {
+      display: flex;
+      gap: 10px;
+      color: var(--muted);
+    }
+
+    .timeline-card li::before,
+    .feature-card li::before,
+    .training-card li::before,
+    .support-card li::before,
+    .investment-card li::before {
+      content: "✦";
+      color: var(--accent);
+      flex: 0 0 auto;
+    }
+
+    .timeline-card[hidden] {
+      display: none;
+    }
+
+    .features-grid {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .feature-card,
+    .training-card,
+    .support-card,
+    .investment-card,
+    .bonus-card {
+      padding: 24px;
+      display: grid;
+      gap: 14px;
+    }
+
+    .feature-icon,
+    .training-icon,
+    .support-icon,
+    .investment-icon,
+    .bonus-icon {
+      width: 52px;
+      height: 52px;
+      border-radius: 16px;
+      display: grid;
+      place-items: center;
+      font-size: 1.35rem;
+      background: linear-gradient(135deg, rgba(255,79,216,0.18), rgba(78,242,194,0.18));
+    }
+
+    .training-grid {
+      grid-template-columns: 1.1fr 0.9fr;
+    }
+
+    .support-grid,
+    .investment-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .bonus-card {
+      background: linear-gradient(135deg, rgba(255,79,216,0.16), rgba(123,97,255,0.16));
+    }
+
+    .investment-price {
+      font-size: clamp(2rem, 5vw, 3rem);
+      line-height: 1;
+      font-weight: 900;
+      letter-spacing: -0.04em;
+    }
+
+    .investment-toggle {
+      margin-top: 6px;
+    }
+
+    .summary-banner {
+      margin-top: 18px;
+      padding: 18px 20px;
+      border-radius: 20px;
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      display: flex;
+      gap: 16px;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .faq-list {
+      display: grid;
+      gap: 14px;
+    }
+
+    .faq-item {
+      padding: 0;
+      overflow: hidden;
+    }
+
+    .faq-item summary {
+      list-style: none;
+      cursor: pointer;
+      padding: 22px 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 18px;
+      font-weight: 700;
+    }
+
+    .faq-item summary::-webkit-details-marker {
+      display: none;
+    }
+
+    .faq-item summary::after {
+      content: "+";
+      font-size: 1.6rem;
+      color: var(--accent);
+      flex: 0 0 auto;
+      line-height: 1;
+    }
+
+    .faq-item[open] summary::after {
+      content: "–";
+    }
+
+    .faq-answer {
+      padding: 0 24px 22px;
+    }
+
+    .footer-cta {
+      padding: 38px 0 52px;
+    }
+
+    .footer-card {
+      border-radius: 28px;
+      padding: 32px;
+      background: linear-gradient(135deg, rgba(255,79,216,0.22), rgba(78,242,194,0.14));
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      box-shadow: var(--shadow);
+      display: flex;
+      gap: 22px;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .footer-card p {
+      color: rgba(255,255,255,0.86);
+      max-width: 60ch;
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(22px);
+      transition: opacity 0.65s ease, transform 0.65s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @media (max-width: 980px) {
+      .hero-grid,
+      .training-grid,
+      .support-grid,
+      .investment-grid,
+      .phase-grid,
+      .features-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .nav-shell {
+        border-radius: 28px;
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .nav-links {
+        justify-content: flex-start;
+      }
+    }
+
+    @media (max-width: 720px) {
+      body {
+        padding-bottom: 40px;
+      }
+
+      .container {
+        width: min(calc(100% - 20px), var(--max-width));
+      }
+
+      .hero-copy,
+      .hero-panel,
+      .content-panel,
+      .feature-card,
+      .timeline-card,
+      .training-card,
+      .support-card,
+      .investment-card,
+      .bonus-card,
+      .footer-card {
+        padding: 22px;
+      }
+
+      .section-heading,
+      .panel-title,
+      .summary-banner {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .countdown {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .nav {
+        top: 8px;
+      }
+    }
+  </style>
 </head>
 <body>
-    <div class="container">
-        <div class="header">
-            <h1>🚀 Do Código ao GitHub</h1>
-            <p>Guia prático com o passo a passo para subir seu site ou app no GitHub</p>
+  <div class="page">
+    <nav class="nav container" aria-label="Menu principal">
+      <div class="nav-shell">
+        <div class="brand">
+          <div class="brand-mark">📲</div>
+          <div>
+            <div>Instagram para Negócios 2026</div>
+            <small style="color: var(--muted); font-weight: 500;">Estratégia, ferramentas &amp; posicionamento</small>
+          </div>
+        </div>
+        <div class="nav-links">
+          <a href="#fases">Fases</a>
+          <a href="#entregas">Entregas</a>
+          <a href="#treinamento">Treinamento</a>
+          <a href="#investimento">Investimento</a>
+          <a href="#faq">FAQ</a>
+        </div>
+        <a class="nav-cta" href="#investimento">Reservar vaga</a>
+      </div>
+    </nav>
+
+    <header class="hero container reveal" id="topo">
+      <div class="hero-grid">
+        <article class="hero-copy">
+          <span class="eyebrow">🚀 Posicionamento estratégico para transformar o seu perfil</span>
+          <h1>Instagram para Negócios 2026</h1>
+          <p class="lead">
+            Você não estará apenas criando mais uma página no Instagram. Estará construindo uma presença estratégica,
+            profissional e intencional para converter atenção em autoridade, consistência e resultados reais.
+          </p>
+
+          <div class="hero-badges">
+            <span>Estratégia personalizada</span>
+            <span>Setup completo da conta</span>
+            <span>Design editorial profissional</span>
+          </div>
+
+          <div class="hero-actions">
+            <a class="button button-primary" href="#fases">Ver como funciona</a>
+            <a class="button button-secondary" href="#investimento">Conferir investimento</a>
+          </div>
+
+          <div class="quick-stats">
+            <div class="stat">
+              <strong>4 fases</strong>
+              <span>da reunião à entrega</span>
+            </div>
+            <div class="stat">
+              <strong>15 dias</strong>
+              <span>de acompanhamento</span>
+            </div>
+            <div class="stat">
+              <strong>+ bônus</strong>
+              <span>treinamento vitalício incluso</span>
+            </div>
+          </div>
+        </article>
+
+        <aside class="hero-panel" aria-label="Destaques da oferta">
+          <div class="panel-title">
+            <div>
+              <h2>Próxima vaga</h2>
+              <p>Disponibilidade anunciada para <strong style="color: white;">18 de maio de 2026</strong>.</p>
+            </div>
+            <span class="mini-chip">Vagas limitadas</span>
+          </div>
+
+          <div class="countdown" id="countdown" aria-live="polite">
+            <div class="countdown-card"><strong id="days">00</strong><span>dias</span></div>
+            <div class="countdown-card"><strong id="hours">00</strong><span>horas</span></div>
+            <div class="countdown-card"><strong id="minutes">00</strong><span>min</span></div>
+            <div class="countdown-card"><strong id="seconds">00</strong><span>seg</span></div>
+          </div>
+
+          <div class="vacancy-note">
+            <strong>🎯 O jogo começa após a reunião inicial.</strong>
+            <p>
+              O processo foi desenhado para organizar sua visão do macro ao micro e transformar seu perfil em um ativo de negócio.
+            </p>
+          </div>
+
+          <div>
+            <div class="mini-chip" style="margin-bottom: 10px;">Inclui</div>
+            <div class="timeline-meta">
+              <span>Bio magnética</span>
+              <span>Destaques</span>
+              <span>Biblioteca de imagens</span>
+              <span>Robôs de IA treinados</span>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </header>
+
+    <main>
+      <section id="fases" class="container reveal">
+        <div class="section-heading">
+          <div>
+            <span class="section-tag">Etapas do projeto</span>
+            <h2>As 4 fases para construir sua presença com intenção</h2>
+            <p>Explore cada etapa do processo e filtre rapidamente para visualizar o que será feito em cada fase.</p>
+          </div>
+          <span class="mini-chip">Experiência interativa</span>
         </div>
 
-        <!-- PASSO 1 -->
-        <div class="section">
-            <div class="section-header" onclick="toggleSection('passo1')">
-                <div class="section-header-left">
-                    <div class="icon" id="icon-passo1">📝</div>
-                    <div class="section-title">Passo 1: Criar o Arquivo HTML</div>
-                </div>
-                <div class="section-actions">
-                    <button class="btn btn-complete" onclick="markComplete('passo1', event)">Marcar como feito</button>
-                    <span class="arrow" id="arrow-passo1">▼</span>
-                </div>
-            </div>
-            <div class="section-content" id="content-passo1">
-                <div class="alert alert-purple">
-                    <strong style="display: block; margin-bottom: 10px;">O que voce precisa fazer:</strong>
-                    <ol>
-                        <li>Abra o <strong>Bloco de Notas</strong> (Windows) ou <strong>TextEdit</strong> (Mac)</li>
-                        <li>Copie o codigo abaixo clicando no botao</li>
-                        <li>Cole no Bloco de Notas</li>
-                        <li>Salve como <strong>index.html</strong> (importante: tem que ser exatamente esse nome!)</li>
-                    </ol>
-                </div>
+        <div class="content-panel phase-intro">
+          <div class="filter-bar" role="tablist" aria-label="Filtros de fases">
+            <button class="phase-button active" type="button" data-filter="all">Todas as fases</button>
+            <button class="phase-button" type="button" data-filter="fase-0">Fase 0</button>
+            <button class="phase-button" type="button" data-filter="fase-1">Fase 01</button>
+            <button class="phase-button" type="button" data-filter="fase-2">Fase 02</button>
+            <button class="phase-button" type="button" data-filter="fase-3">Fase 03</button>
+          </div>
 
-                <div class="code-container">
-                    <div class="code-header">
-                        <strong>Seu Codigo HTML:</strong>
-                        <div class="code-buttons">
-                            <button class="btn-code btn-show" onclick="toggleCode()">
-                                <span id="code-toggle-text">Ver Codigo</span>
-                            </button>
-                            <button class="btn-code btn-copy" onclick="copyCode()">
-                                <span id="copy-text">Copiar Codigo</span>
-                            </button>
-                        </div>
-                    </div>
-                    
-                    <div class="code-block" id="code-block"><pre>&lt;!DOCTYPE html&gt;
-&lt;html lang="pt-BR"&gt;
-&lt;head&gt;
-    &lt;meta charset="UTF-8"&gt;
-    &lt;title&gt;Meu Primeiro Projeto&lt;/title&gt;
-    &lt;style&gt;
-        body {
-            font-family: Arial, sans-serif;
-            max-width: 800px;
-            margin: 50px auto;
-            padding: 20px;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-        }
-        .container {
-            background: rgba(255, 255, 255, 0.1);
-            padding: 40px;
-            border-radius: 20px;
-        }
-        h1 { 
-            text-align: center;
-            animation: fadeIn 1s ease-in;
-        }
-        button {
-            background: #4CAF50;
-            color: white;
-            padding: 15px 30px;
-            border: none;
-            border-radius: 10px;
-            cursor: pointer;
-            display: block;
-            margin: 20px auto;
-            font-size: 16px;
-        }
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
-    &lt;/style&gt;
-&lt;/head&gt;
-&lt;body&gt;
-    &lt;div class="container"&gt;
-        &lt;h1&gt;Meu Site esta no Ar!&lt;/h1&gt;
-        &lt;p&gt;Este e meu primeiro projeto publicado no GitHub.&lt;/p&gt;
-        &lt;button onclick="alert('Parabens! Voce conseguiu!')"&gt;
-            Clique Aqui
-        &lt;/button&gt;
-    &lt;/div&gt;
-&lt;/body&gt;
-&lt;/html&gt;</pre></div>
-                </div>
+          <div class="phase-grid">
+            <article class="timeline-card" data-category="fase-0" data-phase="fase 0">
+              <div class="phase-index">0</div>
+              <div>
+                <h3>Reunião on-line</h3>
+                <p>Nesse encontro, aprofundamos a visão do negócio do macro ao micro para gerar clareza, direção e intencionalidade.</p>
+              </div>
+              <ul>
+                <li>Levantamento da visão do negócio e objetivos.</li>
+                <li>Diagnóstico inicial de posicionamento e oportunidades.</li>
+                <li>Definição do ponto de partida estratégico.</li>
+              </ul>
+            </article>
 
-                <div class="alert alert-yellow">
-                    <strong>Atencao:</strong>
-                    <p style="margin-top: 10px;">Na hora de salvar, mude "Salvar como tipo" para <strong>"Todos os arquivos"</strong> e digite <strong>index.html</strong> como nome do arquivo.</p>
-                </div>
-            </div>
+            <article class="timeline-card" data-category="fase-1" data-phase="fase 01">
+              <div class="phase-index">1</div>
+              <div>
+                <h3>Estratégia</h3>
+                <p>Organizamos o direcionamento completo da sua presença digital para que o perfil seja construído com lógica de negócio.</p>
+              </div>
+              <ul>
+                <li>Estudo minucioso do mercado e do público-alvo.</li>
+                <li>Desenvolvimento da estratégia e posicionamento do perfil.</li>
+                <li>Definição da bio magnética e da narrativa principal.</li>
+              </ul>
+            </article>
+
+            <article class="timeline-card" data-category="fase-2" data-phase="fase 02">
+              <div class="phase-index">2</div>
+              <div>
+                <h3>Setup da conta</h3>
+                <p>Transformamos o perfil em uma vitrine profissional, coerente e preparada para comunicar valor desde o primeiro acesso.</p>
+              </div>
+              <ul>
+                <li>Estruturação de destaques e organização da página.</li>
+                <li>Criação de ferramentas de apoio para operação do perfil.</li>
+                <li>Configuração de biblioteca de imagens e ativos-base.</li>
+              </ul>
+            </article>
+
+            <article class="timeline-card" data-category="fase-3" data-phase="fase 03">
+              <div class="phase-index">3</div>
+              <div>
+                <h3>Design editorial</h3>
+                <p>Criamos a identidade editorial do conteúdo para sustentar autoridade visual, consistência e reconhecimento da marca.</p>
+              </div>
+              <ul>
+                <li>Design editorial profissional para os criativos.</li>
+                <li>Estrutura de peças editáveis no Canva.</li>
+                <li>Robôs de IA treinados para o seu negócio.</li>
+              </ul>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="entregas" class="container reveal">
+        <div class="section-heading">
+          <div>
+            <span class="section-tag">O que será desenvolvido</span>
+            <h2>Entregas pensadas para posicionar, organizar e escalar</h2>
+            <p>Selecione uma visão para navegar pelas entregas e entender o que você recebe dentro da estrutura completa.</p>
+          </div>
+          <span class="mini-chip">Conteúdo do projeto</span>
         </div>
 
-        <!-- PASSO 2 -->
-        <div class="section">
-            <div class="section-header" onclick="toggleSection('passo2')">
-                <div class="section-header-left">
-                    <div class="icon" id="icon-passo2">🔐</div>
-                    <div class="section-title">Passo 2: Criar Conta no GitHub</div>
-                </div>
-                <div class="section-actions">
-                    <button class="btn btn-complete" onclick="markComplete('passo2', event)">Marcar como feito</button>
-                    <span class="arrow" id="arrow-passo2">▼</span>
-                </div>
-            </div>
-            <div class="section-content" id="content-passo2">
-                <div class="alert alert-purple">
-                    <strong style="display: block; margin-bottom: 10px;">Siga estes passos:</strong>
-                    <ol>
-                        <li>Acesse <a href="https://github.com" target="_blank">github.com</a></li>
-                        <li>Clique em <strong>"Sign up"</strong> (Cadastrar)</li>
-                        <li>Preencha seu email, uma senha forte e um nome de usuario</li>
-                        <li>Confirme seu email (verifique sua caixa de entrada)</li>
-                    </ol>
-                </div>
+        <div class="content-panel">
+          <div class="filter-bar" aria-label="Filtro de entregas">
+            <button class="chip-button active" type="button" data-target="all">Tudo</button>
+            <button class="chip-button" type="button" data-target="estrategia">Estratégia</button>
+            <button class="chip-button" type="button" data-target="perfil">Perfil</button>
+            <button class="chip-button" type="button" data-target="conteudo">Conteúdo</button>
+            <button class="chip-button" type="button" data-target="automacao">IA &amp; ferramentas</button>
+          </div>
 
-                <div class="alert alert-green">
-                    <strong>Dica:</strong>
-                    <p style="margin-top: 10px;">Escolha um nome de usuario profissional. Exemplo: se seu nome e Maria Silva, use algo como "mariasilva" ou "maria-silva-dev".</p>
-                </div>
-            </div>
+          <div class="features-grid">
+            <article class="feature-card" data-group="estrategia">
+              <div class="feature-icon">🎯</div>
+              <h3>Estratégia sob medida</h3>
+              <p>Estudo minucioso do mercado e do público-alvo para construir uma direção de crescimento coerente.</p>
+              <ul>
+                <li>Mapeamento de cenário e diferenciação.</li>
+                <li>Definição estratégica de posicionamento.</li>
+              </ul>
+            </article>
+
+            <article class="feature-card" data-group="perfil">
+              <div class="feature-icon">🧲</div>
+              <h3>Perfil que atrai</h3>
+              <p>Organização dos pontos mais visíveis do Instagram para comunicar clareza e valor logo na primeira impressão.</p>
+              <ul>
+                <li>Bio magnética orientada à conversão.</li>
+                <li>Estrutura de destaques e apresentação.</li>
+              </ul>
+            </article>
+
+            <article class="feature-card" data-group="conteudo">
+              <div class="feature-icon">🎨</div>
+              <h3>Design editorial profissional</h3>
+              <p>Construção visual pensada para manter unidade estética e facilitar a produção contínua de conteúdo.</p>
+              <ul>
+                <li>Criativos estruturados em formato editável no Canva.</li>
+                <li>Direção editorial alinhada ao posicionamento.</li>
+              </ul>
+            </article>
+
+            <article class="feature-card" data-group="automacao">
+              <div class="feature-icon">🤖</div>
+              <h3>Ferramentas e IA aplicada</h3>
+              <p>Você recebe apoio operacional para acelerar a execução e criar uma rotina mais inteligente de produção.</p>
+              <ul>
+                <li>Criação de ferramentas exclusivas para o negócio.</li>
+                <li>Robôs de IA treinados e prontos para trabalhar.</li>
+              </ul>
+            </article>
+
+            <article class="feature-card" data-group="conteudo perfil">
+              <div class="feature-icon">🖼️</div>
+              <h3>Biblioteca de imagens</h3>
+              <p>Base visual organizada para agilizar a criação das peças e garantir consistência visual em toda a operação.</p>
+              <ul>
+                <li>Ativos centralizados para uso recorrente.</li>
+                <li>Apoio à produção rápida e padronizada.</li>
+              </ul>
+            </article>
+
+            <article class="feature-card" data-group="estrategia automacao">
+              <div class="feature-icon">📈</div>
+              <h3>Estrutura para crescer com direção</h3>
+              <p>Mais do que presença, o projeto entrega uma base para evolução consistente, análise e tomada de decisão.</p>
+              <ul>
+                <li>Critérios claros para avaliar resultados.</li>
+                <li>Visão integrada entre posicionamento, operação e performance.</li>
+              </ul>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="treinamento" class="container reveal">
+        <div class="section-heading">
+          <div>
+            <span class="section-tag">Treinamento prático on-line</span>
+            <h2>Direcionamento para manter o perfil em crescimento consistente</h2>
+            <p>Após a entrega da estrutura, você aprende exatamente como usar, editar, programar e medir com segurança.</p>
+          </div>
+          <span class="mini-chip">Implementação assistida</span>
         </div>
 
-        <!-- PASSO 3 -->
-        <div class="section">
-            <div class="section-header" onclick="toggleSection('passo3')">
-                <div class="section-header-left">
-                    <div class="icon" id="icon-passo3">📁</div>
-                    <div class="section-title">Passo 3: Criar Repositorio</div>
-                </div>
-                <div class="section-actions">
-                    <button class="btn btn-complete" onclick="markComplete('passo3', event)">Marcar como feito</button>
-                    <span class="arrow" id="arrow-passo3">▼</span>
-                </div>
-            </div>
-            <div class="section-content" id="content-passo3">
-                <div class="alert alert-purple">
-                    <strong style="display: block; margin-bottom: 15px;">Criando seu repositorio:</strong>
-                    <ol>
-                        <li>No GitHub, clique no <strong>botao verde "New"</strong></li>
-                        <li>No campo "Repository name", digite: <strong>nome-do-projeto</strong>
-                            <div style="background: white; padding: 15px; border-radius: 8px; margin-top: 10px;">
-                                <p style="font-size: 0.9em; color: #6b21a8;">Exemplo: se seu projeto e um portfolio, digite:</p>
-                                <p style="font-family: monospace; font-weight: bold; color: #6b21a8; font-size: 1.1em;">meu-portfolio</p>
-                            </div>
-                        </li>
-                        <li>Marque a opcao <strong>"Public"</strong></li>
-                        <li>Marque <strong>"Add a README file"</strong></li>
-                        <li>Clique em <strong>"Create repository"</strong></li>
-                    </ol>
-                </div>
+        <div class="training-grid">
+          <article class="training-card">
+            <div class="training-icon">🧭</div>
+            <h3>Cronograma do treinamento</h3>
+            <ul>
+              <li>Como aplicar as estratégias definidas no projeto.</li>
+              <li>Passo a passo para utilizar cada ferramenta desenvolvida.</li>
+              <li>Como orquestrar seu time de robôs de IA.</li>
+              <li>Estrutura editorial dos criativos em formato editável no Canva.</li>
+              <li>Como editar as artes prontas do Canva com autonomia.</li>
+              <li>Quais métricas realmente importam para avaliar resultados.</li>
+              <li>Quais critérios usar para tomar decisões com mais precisão.</li>
+              <li>Como programar as postagens e manter consistência.</li>
+            </ul>
+          </article>
 
-                <div class="alert alert-red">
-                    <strong>Muito importante:</strong>
-                    <p style="margin-top: 10px;">Para sites de projeto (nao seu site pessoal), o nome pode ser qualquer um, como <strong>nome-do-projeto</strong>. Isso fara seu site ficar em: <strong>seu-usuario.github.io/nome-do-projeto/</strong></p>
-                </div>
-            </div>
+          <div style="display: grid; gap: 18px;">
+            <article class="bonus-card">
+              <div class="bonus-icon">🎁</div>
+              <h3>Bônus vitalício</h3>
+              <p>
+                Acesso vitalício ao treinamento online e prático <strong style="color: white;">Instagram do Zero ao Profissional</strong>,
+                com metodologia simples, explicações claras e conteúdo do básico ao avançado.
+              </p>
+            </article>
+
+            <article class="support-card">
+              <div class="support-icon">🛟</div>
+              <h3>Acompanhamento por 15 dias</h3>
+              <p>Depois da entrega, você conta com suporte direto para implementar, alinhar processos e tirar dúvidas com segurança.</p>
+              <ul>
+                <li>Direcionamento próximo após a estrutura ficar pronta.</li>
+                <li>Espaço para esclarecer dúvidas e ajustar a operação.</li>
+                <li>Orientação contínua sempre que necessário durante o período.</li>
+              </ul>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="investimento" class="container reveal">
+        <div class="section-heading">
+          <div>
+            <span class="section-tag">Investimento</span>
+            <h2>Escolha a forma de pagamento e veja a diferença instantaneamente</h2>
+            <p>A interface compara parcelamento no cartão e pagamento via Pix para facilitar a tomada de decisão.</p>
+          </div>
+          <span class="mini-chip">Simulador simples</span>
         </div>
 
-        <!-- PASSO 4 -->
-        <div class="section">
-            <div class="section-header" onclick="toggleSection('passo4')">
-                <div class="section-header-left">
-                    <div class="icon" id="icon-passo4">⬆️</div>
-                    <div class="section-title">Passo 4: Fazer Upload do Arquivo</div>
-                </div>
-                <div class="section-actions">
-                    <button class="btn btn-complete" onclick="markComplete('passo4', event)">Marcar como feito</button>
-                    <span class="arrow" id="arrow-passo4">▼</span>
-                </div>
+        <div class="investment-grid">
+          <article class="investment-card">
+            <div class="investment-icon">💳</div>
+            <h3>Forma de pagamento</h3>
+            <p class="investment-note">Alterne entre as opções para visualizar o valor principal e o comparativo financeiro.</p>
+            <div class="investment-toggle" role="tablist" aria-label="Formas de pagamento">
+              <button class="chip-button active" type="button" data-payment="card">12x no cartão</button>
+              <button class="chip-button" type="button" data-payment="pix">Pix à vista</button>
             </div>
-            <div class="section-content" id="content-passo4">
-                <div class="alert alert-teal">
-                    <strong style="display: block; margin-bottom: 10px;">Enviando seu arquivo:</strong>
-                    <ol>
-                        <li>Dentro do repositorio que voce criou, clique em <strong>"Add file"</strong></li>
-                        <li>Clique em <strong>"Upload files"</strong></li>
-                        <li>Arraste o arquivo <strong>index.html</strong> que voce salvou OU clique em "choose your files"</li>
-                        <li>Na parte de baixo, escreva uma mensagem. Exemplo: "Meu primeiro site"</li>
-                        <li>Clique no botao verde <strong>"Commit changes"</strong></li>
-                    </ol>
-                </div>
 
-                <div class="alert alert-blue">
-                    <strong>Aguarde a próxima etapa...</strong>
-                    <p style="margin-top: 10px;">Voce precisa configurar o GitHub Pages para que ele saiba qual arquivo publicar.</p>
-                </div>
+            <div style="margin-top: 18px;">
+              <div class="investment-price" id="investmentPrice">12x R$ 239,90</div>
+              <p id="investmentDescription" class="investment-note">Parcelamento no cartão de crédito para distribuir o investimento ao longo do ano.</p>
             </div>
+
+            <div class="summary-banner">
+              <div>
+                <strong style="display:block; font-size: 1.05rem; margin-bottom: 4px;">Economia comparativa</strong>
+                <span id="savingsText" class="investment-note">No Pix, a diferença para o valor parcelado é de R$ 288,80.</span>
+              </div>
+              <span class="mini-chip" id="highlightTag">Opção exibida: cartão</span>
+            </div>
+          </article>
+
+          <article class="investment-card">
+            <div class="investment-icon">📦</div>
+            <h3>O pacote inclui</h3>
+            <ul>
+              <li>Estratégia, setup e design editorial em uma única jornada.</li>
+              <li>Treinamento prático para dar continuidade ao crescimento.</li>
+              <li>Bônus vitalício com formação do zero ao profissional.</li>
+              <li>15 dias de acompanhamento após a entrega da estrutura.</li>
+            </ul>
+            <a class="button button-primary" href="#topo" style="width: fit-content;">Quero me posicionar</a>
+          </article>
+        </div>
+      </section>
+
+      <section id="faq" class="container reveal">
+        <div class="section-heading">
+          <div>
+            <span class="section-tag">Perguntas frequentes</span>
+            <h2>O essencial para entender a proposta rapidamente</h2>
+            <p>Abra as respostas para revisar formato, entregas, suporte e disponibilidade da próxima vaga.</p>
+          </div>
+          <span class="mini-chip">FAQ em acordeão</span>
         </div>
 
-        <!-- PASSO 5 -->
-        <div class="section">
-            <div class="section-header" onclick="toggleSection('passo5')">
-                <div class="section-header-left">
-                    <div class="icon" id="icon-passo5">⚙️</div>
-                    <div class="section-title">Passo 5: Ativar o GitHub Pages</div>
-                </div>
-                <div class="section-actions">
-                    <button class="btn btn-complete" onclick="markComplete('passo5', event)">Marcar como feito</button>
-                    <span class="arrow" id="arrow-passo5">▼</span>
-                </div>
+        <div class="faq-list">
+          <details class="faq-item">
+            <summary>Esse projeto é só para criar um perfil bonito?</summary>
+            <div class="faq-answer">
+              Não. A proposta é posicionar o perfil com estratégia para que ele funcione como um ativo do negócio, com direção, estrutura e consistência.
             </div>
-            <div class="section-content" id="content-passo5">
-                <div class="alert alert-red">
-                    <strong style="display: block; margin-bottom: 10px;">Aviso Importante:</strong>
-                    <p style="margin-top: 10px;">Como este é um "Site de Projeto", você precisa ativar a publicação manualmente.</p>
-                </div>
-                <div class="alert alert-purple">
-                    <strong style="display: block; margin-bottom: 15px;">Ative seu site:</strong>
-                    <ol>
-                        <li>No seu repositório, clique na aba <strong>"Settings"</strong> (Configurações).</li>
-                        <li>No menu lateral, clique em <strong>"Pages"</strong> (Páginas).</li>
-                        <li>Em "Source" (Fonte), selecione <strong>"Deploy from a branch"</strong>.</li>
-                        <li>Em "Branch", selecione <strong>main</strong> (ou master) e na pasta, mantenha <strong>/ (root)</strong>.</li>
-                        <li>Clique em <strong>"Save"</strong> (Salvar).</li>
-                    </ol>
-                </div>
-                <div class="alert alert-blue">
-                    <strong>Processando...</strong>
-                    <p style="margin-top: 10px;">O GitHub levará alguns minutos (de 2 a 5) para processar as configurações e publicar seu site no link.</p>
-                </div>
+          </details>
+
+          <details class="faq-item">
+            <summary>O que acontece na reunião on-line inicial?</summary>
+            <div class="faq-answer">
+              A reunião aprofunda a visão do seu negócio do macro ao micro para definir clareza, direção e intenção antes da execução das fases seguintes.
             </div>
+          </details>
+
+          <details class="faq-item">
+            <summary>Depois da entrega eu recebo orientação para aplicar tudo?</summary>
+            <div class="faq-answer">
+              Sim. Além do treinamento prático on-line, há acompanhamento e direcionamento por 15 dias após a entrega de toda a estrutura.
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary>Qual é a próxima disponibilidade informada?</summary>
+            <div class="faq-answer">
+              A próxima vaga apresentada neste site está indicada para <strong style="color: white;">18 de maio de 2026</strong>.
+            </div>
+          </details>
         </div>
+      </section>
+    </main>
 
-        <!-- PASSO 6 -->
-        <div class="section">
-            <div class="section-header" onclick="toggleSection('passo6')">
-                <div class="section-header-left">
-                    <div class="icon" id="icon-passo6">🎉</div>
-                    <div class="section-title">Passo 6: Ver Seu Site no Ar!</div>
-                </div>
-                <div class="section-actions">
-                    <button class="btn btn-complete" onclick="markComplete('passo6', event)">Marcar como feito</button>
-                    <span class="arrow" id="arrow-passo6">▼</span>
-                </div>
-            </div>
-            <div class="section-content" id="content-passo6">
-                <div style="background: linear-gradient(to right, #f3e8ff, #fce7f3); padding: 30px; border-radius: 15px; margin-bottom: 20px;">
-                    <h3 style="color: #7c3aed; font-size: 1.5em; margin-bottom: 15px;">Parabens!</h3>
-                    <p style="color: #7c3aed; font-size: 1.1em; margin-bottom: 15px;">Seu site esta no ar! Acesse em:</p>
-                    <div style="background: white; padding: 20px; border-radius: 10px; box-shadow: 0 4px 15px rgba(0,0,0,0.1);">
-                        <p style="font-family: monospace; color: #7c3aed; font-weight: bold; text-align: center; font-size: 1.2em;">
-                            https://seu-usuario.github.io/nome-do-projeto/
-                        </p>
-                        <p style="text-align: center; margin-top: 10px; color: #666; font-size: 0.9em;">
-                            (substitua "seu-usuario" pelo seu nome de usuario do GitHub e "nome-do-projeto" pelo nome do seu repositorio)
-                        </p>
-                    </div>
-                </div>
-            </div>
+    <footer class="footer-cta container reveal">
+      <div class="footer-card">
+        <div>
+          <h2 style="margin-bottom: 10px;">Seu perfil pode parar de improvisar e começar a operar com estratégia.</h2>
+          <p>
+            Se a intenção é crescer com clareza, posicionamento e estrutura, essa entrega reúne planejamento, design, ferramentas e acompanhamento em um único processo.
+          </p>
         </div>
+        <a class="button button-primary" href="#investimento">Garantir interesse na próxima vaga</a>
+      </div>
+    </footer>
+  </div>
 
-        <div class="final-banner">
-            <h3>Parabéns, você descodificou o GitHub!</h3>
-        </div>
-    </div>
+  <script>
+    const phaseButtons = document.querySelectorAll('.phase-button');
+    const phaseCards = document.querySelectorAll('.timeline-card');
+    const filterButtons = document.querySelectorAll('.chip-button[data-target]');
+    const featureCards = document.querySelectorAll('.feature-card');
+    const paymentButtons = document.querySelectorAll('.chip-button[data-payment]');
 
-    <script>
-        // Estado dos passos completados
-        const state = {
-            completed: {},
-            codeVisible: false
-        };
+    phaseButtons.forEach((button) => {
+      button.addEventListener('click', () => {
+        phaseButtons.forEach((item) => item.classList.remove('active'));
+        button.classList.add('active');
+        const selected = button.dataset.filter;
 
-        // Ícones originais de cada passo
-        const icons = {
-            'passo1': '📝',
-            'passo2': '🔐',
-            'passo3': '📁',
-            'passo4': '⬆️',
-            'passo5': '⚙️',
-            'passo6': '🎉'
-        };
+        phaseCards.forEach((card) => {
+          const shouldShow = selected === 'all' || card.dataset.category === selected;
+          card.hidden = !shouldShow;
+        });
+      });
+    });
 
-        // Alternar visibilidade da seção
-        function toggleSection(id) {
-            const content = document.getElementById('content-' + id);
-            const arrow = document.getElementById('arrow-' + id);
-            
-            if (content.classList.contains('show')) {
-                content.classList.remove('show');
-                arrow.classList.remove('rotated');
-            } else {
-                content.classList.add('show');
-                arrow.classList.add('rotated');
-            }
-        }
+    filterButtons.forEach((button) => {
+      button.addEventListener('click', () => {
+        filterButtons.forEach((item) => item.classList.remove('active'));
+        button.classList.add('active');
+        const target = button.dataset.target;
 
-        // Marcar passo como completo
-        function markComplete(step, event) {
-            event.stopPropagation();
-            
-            const btn = event.target.closest('.btn-complete');
-            const icon = document.getElementById('icon-' + step);
-            
-            if (state.completed[step]) {
-                // Desmarcar
-                state.completed[step] = false;
-                btn.classList.remove('completed');
-                btn.textContent = 'Marcar como feito';
-                icon.classList.remove('completed');
-                icon.textContent = icons[step];
-            } else {
-                // Marcar
-                state.completed[step] = true;
-                btn.classList.add('completed');
-                btn.textContent = '✓ Feito';
-                icon.classList.add('completed');
-                icon.textContent = '✓';
-            }
-        }
+        featureCards.forEach((card) => {
+          const groups = (card.dataset.group || '').split(' ');
+          const shouldShow = target === 'all' || groups.includes(target);
+          card.hidden = !shouldShow;
+        });
+      });
+    });
 
-        // Alternar código
-        function toggleCode() {
-            const codeBlock = document.getElementById('code-block');
-            const toggleText = document.getElementById('code-toggle-text');
-            
-            if (state.codeVisible) {
-                codeBlock.classList.remove('show');
-                toggleText.textContent = 'Ver Codigo';
-                state.codeVisible = false;
-            } else {
-                codeBlock.classList.add('show');
-                toggleText.textContent = 'Ocultar Codigo';
-                state.codeVisible = true;
-            }
-        }
+    const paymentState = {
+      card: {
+        price: '12x R$ 239,90',
+        description: 'Parcelamento no cartão de crédito para distribuir o investimento ao longo do ano.',
+        savings: 'No Pix, a diferença para o valor parcelado é de R$ 288,80.',
+        tag: 'Opção exibida: cartão'
+      },
+      pix: {
+        price: 'R$ 2.590,00 via Pix',
+        description: 'Pagamento à vista em Pix com valor final reduzido em relação ao parcelamento.',
+        savings: 'Economia de R$ 288,80 em comparação ao total parcelado no cartão.',
+        tag: 'Opção exibida: Pix'
+      }
+    };
 
-        // Copiar código
-        function copyCode() {
-            const codeText = `<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <title>Meu Primeiro Projeto</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            max-width: 800px;
-            margin: 50px auto;
-            padding: 20px;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
+    const investmentPrice = document.getElementById('investmentPrice');
+    const investmentDescription = document.getElementById('investmentDescription');
+    const savingsText = document.getElementById('savingsText');
+    const highlightTag = document.getElementById('highlightTag');
+
+    paymentButtons.forEach((button) => {
+      button.addEventListener('click', () => {
+        paymentButtons.forEach((item) => item.classList.remove('active'));
+        button.classList.add('active');
+
+        const payment = paymentState[button.dataset.payment];
+        investmentPrice.textContent = payment.price;
+        investmentDescription.textContent = payment.description;
+        savingsText.textContent = payment.savings;
+        highlightTag.textContent = payment.tag;
+      });
+    });
+
+    const countDownDate = new Date('2026-05-18T00:00:00-03:00').getTime();
+    const ids = {
+      days: document.getElementById('days'),
+      hours: document.getElementById('hours'),
+      minutes: document.getElementById('minutes'),
+      seconds: document.getElementById('seconds')
+    };
+
+    function updateCountdown() {
+      const now = Date.now();
+      const distance = countDownDate - now;
+
+      if (distance <= 0) {
+        ids.days.textContent = '00';
+        ids.hours.textContent = '00';
+        ids.minutes.textContent = '00';
+        ids.seconds.textContent = '00';
+        return;
+      }
+
+      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((distance / (1000 * 60 * 60)) % 24);
+      const minutes = Math.floor((distance / 1000 / 60) % 60);
+      const seconds = Math.floor((distance / 1000) % 60);
+
+      ids.days.textContent = String(days).padStart(2, '0');
+      ids.hours.textContent = String(hours).padStart(2, '0');
+      ids.minutes.textContent = String(minutes).padStart(2, '0');
+      ids.seconds.textContent = String(seconds).padStart(2, '0');
+    }
+
+    updateCountdown();
+    setInterval(updateCountdown, 1000);
+
+    const revealElements = document.querySelectorAll('.reveal');
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          revealObserver.unobserve(entry.target);
         }
-        .container {
-            background: rgba(255, 255, 255, 0.1);
-            padding: 40px;
-            border-radius: 20px;
-        }
-        h1 { 
-            text-align: center;
-            animation: fadeIn 1s ease-in;
-        }
-        button {
-            background: #4CAF50;
-            color: white;
-            padding: 15px 30px;
-            border: none;
-            border-radius: 10px;
-            cursor: pointer;
-            display: block;
-            margin: 20px auto;
-            font-size: 16px;
-        }
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
-    </style>
-</head>
-<body>
-    <div class="container">
-        <h1>Meu Site esta no Ar!</h1>
-        <p>Este e meu primeiro projeto publicado no GitHub.</p>
-        <button onclick="alert('Parabens! Voce conseguiu!')">
-            Clique Aqui
-        </button>
-    </div>
-</body>
-</html>`;
-            
-            navigator.clipboard.writeText(codeText).then(() => {
-                const copyText = document.getElementById('copy-text');
-                copyText.textContent = '✓ Copiado!';
-                setTimeout(() => {
-                    copyText.textContent = 'Copiar Codigo';
-                }, 2000);
-            }).catch(err => {
-                alert('Erro ao copiar. Tente selecionar e copiar manualmente.');
-            });
-        }
-    </script>
+      });
+    }, { threshold: 0.14 });
+
+    revealElements.forEach((element) => revealObserver.observe(element));
+
+    const sections = [...document.querySelectorAll('main section')];
+    const navLinks = [...document.querySelectorAll('.nav-links a')];
+    const sectionObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+        navLinks.forEach((link) => {
+          const href = link.getAttribute('href');
+          link.classList.toggle('active', href === `#${entry.target.id}`);
+        });
+      });
+    }, { threshold: 0.4 });
+
+    sections.forEach((section) => sectionObserver.observe(section));
+  </script>
 </body>
 </html>
